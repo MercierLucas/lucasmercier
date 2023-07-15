@@ -1,6 +1,11 @@
 <script lang="ts">
     import { onMount } from 'svelte';
 
+    import ets from "$lib/assets/images/ets.png"
+    import github from "$lib/assets/images/github.svg"
+    import linkedin from "$lib/assets/images/linkedin.svg"
+    import plane from "$lib/assets/images/paper-plane.svg"
+
     import Experience from "$lib/components/Experience.svelte";
 
     import '$lib/styles/style.scss';
