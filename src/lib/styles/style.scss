@@ -1,0 +1,155 @@
+:root
+{
+  --color-background: #FFFFFF;
+  --color-background-secondary: #F2F2F8; 
+  --color-text: #333;
+  --color-constrast-low: rgb(153, 133, 255);
+}
+
+
+.solar-theme
+{
+  --color-background: #EEE8D5;
+  --color-text: #879697;
+  --color-card: #FDF6E3;
+  --color-constrast-low: #268BD2;
+}
+
+.light-theme
+{
+  --color-text-secondary: grey;
+  --color-background: #FFFFFF;
+  --color-gradient-start: #FF3584;
+  --color-gradient-end: #FF6C4A;
+  --color-constrast-low: rgb(153, 133, 255);
+  --color-card: #fcfdfe;
+}
+
+.dark-theme
+{
+  --color-background: #212630;
+  --color-text: #FFFFFF;
+  --color-text-secondary: grey;
+
+  --color-gradient-start: #FF3584;
+  --color-gradient-end: #FF6C4A;
+  --color-constrast-low: rgb(153, 133, 255);
+  --color-card: #3b2c3c;
+}
+
+
+body
+{
+  --color-text-secondary: grey;
+  --color-background: #FFFFFF;
+  --color-gradient-start: #FF3584;
+  --color-gradient-end: #FF6C4A;
+  --color-constrast-low: rgb(153, 133, 255);
+  --color-card: #fcfdfe;
+
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: sans-serif;
+
+  transition: background .3s;
+}
+  
+main 
+{
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 60rem;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+.secondary
+{
+  color: var(--color-text-secondary);
+}
+
+@font-face
+{
+  font-family: "Latin Modern Roman 17";
+  font-weight: 400;
+  src: url("/fonts/lmroman17-regular.otf");
+}
+
+article h1,
+article h2,
+article h3,
+article h4
+{
+  font-family: "Latin Modern Roman 17" !important;
+  font-weight: 400;
+}
+
+
+.card
+{
+    padding: 1rem;
+    border-radius: 5px;
+    border: solid 1px rgb(171, 171, 171);
+    background-color: var(--color-card);
+    -webkit-box-shadow: 0 0 0 1px rgba(53, 72, 91, 0.14), 0 3px 2px rgba(0, 0, 0, 0.04), 0 7px 7px rgba(0, 0, 0, 0.03); 
+    box-shadow: 0 0 0 1px rgba(53, 72, 91, 0.14), 0 3px 2px rgba(0, 0, 0, 0.04), 0 7px 7px rgba(0, 0, 0, 0.03);
+}
+
+@mixin gradient()
+{
+  text-decoration: none;
+  background: #A164DE;
+  background: linear-gradient(to right, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background .5s;
+}
+
+.highlight
+{
+  @include gradient()
+}
+
+.tag:hover
+{
+  @include gradient()
+}
+
+.toc-link {
+
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.toc-link:hover
+{
+  @include gradient()
+}
+
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  text-decoration: none;
+  color: var(--color-text);
+
+}
+
+
+.toc
+{
+
+  .toc-level-1 {
+
+    font-size: 1.2rem;
+
+  }
+
+  border-bottom: 1px solid grey;
+
+}
