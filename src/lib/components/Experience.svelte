@@ -7,7 +7,7 @@
     export let toDate:string;
     export let flag:string;
 
-    const localImageURI = new URL("../assets/images/"+imageURI, import.meta.url).href;
+    //const localImageURI = new URL("../assets/images/"+imageURI, import.meta.url).href;
 
     export let description:string[];
     import '$lib/styles/style.scss'
@@ -16,7 +16,7 @@
 
 
 <div id="main_container">
-    <img src={localImageURI} alt="">
+    <img src={imageURI} alt="">
     <div>
         <p>{title}</p>
         <span id="date">{fromDate} to {toDate},</span>

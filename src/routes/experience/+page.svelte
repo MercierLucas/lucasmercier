@@ -2,9 +2,11 @@
     import { onMount } from 'svelte';
 
     import ets from "$lib/assets/images/ets.png"
-    import github from "$lib/assets/images/github.svg"
-    import linkedin from "$lib/assets/images/linkedin.svg"
-    import plane from "$lib/assets/images/paper-plane.svg"
+    import isep from "$lib/assets/images/isep.png"
+    import glyndwr from "$lib/assets/images/glyndwr.png"
+    import lio from "$lib/assets/images/lio.png"
+    import boxy from "$lib/assets/images/boxy.png"
+    import pinewood from "$lib/assets/images/pinewood.png"
 
     import Experience from "$lib/components/Experience.svelte";
 
@@ -17,7 +19,7 @@
             flag: "🇨🇦",
             where: "ETS - Ecole de technologie supérieure, Montreal, Canada",
             organizationURI: "https://www.etsmtl.ca/laboratoires/lio",
-            imageURI: "ets.png",
+            imageURI: ets,
             fromDate: "January 2022", toDate: "Now",
             description: [
                 "Human pose estimation applied to video movement analysis to compute biomecanical parameters",
@@ -29,7 +31,7 @@
             where: "ISEP, Paris, France",
             flag: "🇫🇷",
             organizationURI: "https://www.isep.fr/",
-            imageURI: "isep.png",
+            imageURI: isep,
             fromDate: "2016", toDate: "2021",
             description: [
                 "Specialization - Data science (2 years): Databases technologies (SQL/NoSQL), Computer vision research project (see 'projects') and Deep learning",
@@ -42,7 +44,7 @@
             flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
             where: "Wrexham Glyndŵr University, Wales, UK",
             organizationURI: "https://glyndwr.ac.uk/",
-            imageURI: "glyndwr.png",
+            imageURI: glyndwr,
             fromDate: "January 2018", toDate: "June 2018",
             description: [
                 "Ethics applied to computer science",
@@ -58,7 +60,7 @@
             flag: "🇨🇦",
             where: "Laboratoire en imagerie et orthopédie, Montreal, Canada",
             organizationURI: "https://www.etsmtl.ca/laboratoires/lio",
-            imageURI: "lio.png",
+            imageURI: lio,
             fromDate: "February 2021", toDate: "Now",
             description: [
                 "Developpement: Internal tool for 3D model reconstruction from CT scans (C++)",
@@ -71,7 +73,7 @@
             flag: "🇫🇷", 
             where: "Boxy, France",
             organizationURI: "https://www.getboxy.co/",
-            imageURI: "boxy.png",
+            imageURI: boxy,
             fromDate: "February 2021", toDate: "August 2021",
             description: [
                 "Multiple object tracking (MOT) algorithm benchmark for person tracking in autonomous store (Torch / TensorFlow)",
@@ -83,7 +85,7 @@
             flag: "🇬🇧",
             where: "Pinewood Technologies, Birmingham UK",
             organizationURI: "https://www.pinewood.co.uk/",
-            imageURI: "pinewood.png",
+            imageURI: pinewood,
             fromDate: "February 2020", toDate: "Jun 2020",
             description: [
                 "Front end: ASP / JS / HTML / CSS",
