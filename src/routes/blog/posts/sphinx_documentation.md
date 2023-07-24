@@ -161,16 +161,22 @@ python -m http.server --bind 127.0.0.1
 
 ## 5.1 - Adding a navbar on the left
 
-In the numpy's documentation there is a left navbar that contains high level modules. It's called a Table of Content (Toc) and it's quite useful to quickly navigate. To add one to your site go the `docs/source` folder and open `index.rst`
+In the numpy's documentation there is a left navbar that contains high level modules. It's called a Table of Content (Toc) and it's quite useful to quickly navigate. We will use the autosummary module combined with the 'recursive' tag to generate it:
+
+To add this to your site go the `docs/source` folder and open `index.rst`
 
 ```rst
 Welcome to your documentation!
 ==============================
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-   
-   pages/modules   <---- insert this
+
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
+
+	Module_1
+	Module_2
+	.. add your modules ^ here
+
 ```
 
 ## 5.2 - Change the theme

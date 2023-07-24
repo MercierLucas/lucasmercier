@@ -4,7 +4,7 @@ date: "2023-06-26"
 tldr: Collection of resources I use or used 
 categories:
     - research
-    - productivity
+    - resources
     - francais
     - english
 ---
