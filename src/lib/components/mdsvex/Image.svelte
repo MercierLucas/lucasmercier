@@ -2,7 +2,8 @@
 	export let src: string
 	export let alt: string
 
-    const localImageURI = new URL("../../assets/images/"+src, import.meta.url).href;
+    // const localImageURI = new URL("../../assets/images/"+src, import.meta.url).href;
+    const localImageURI = src;
 </script>
 
 <div>
