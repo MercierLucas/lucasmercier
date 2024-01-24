@@ -39,7 +39,7 @@
                 <ul>
                     <li>{$t("homepage.phd_title")}</li>
                     <li>{$t("homepage.engineer")}</li>
-                    <li>{$t("homepage.internship")}Computer vision internship</li>
+                    <li>{$t("homepage.internship")}</li>
                     <li><a href="/experience" class="highlight">{$t("homepage.more")}</a></li>
                 </ul>
             </div>
