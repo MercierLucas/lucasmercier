@@ -77,7 +77,7 @@ Once installed, you can use the `CTRL + p` to open the command window and search
 
 If we take the same example as before, we get something like:
 
-![Figure 4: Zotero annotation import with (Kipf et Welling, 2017) paper](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/export_zotero_integration.png)
+![Figure 4: Zotero annotation import with (Kipf et Welling, 2017) paper](https://raw.githubusercontent.com/MercierLucas/lucasmercier/master/src/lib/assets/images/export_zotero_integration.png)
 
 Be carefull, if you add text directly in the note and you re-import it, those notes will be lost. To prevent this is can add a "persistent" section. To do this take a look at the template I linked, or directly in the [plugin's documentation](https://github.com/mgmeyers/obsidian-zotero-integration/blob/main/docs/Templating.md). 
 
