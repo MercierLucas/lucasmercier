@@ -1,5 +1,6 @@
 <script lang="ts">
     import github from "$lib/assets/images/github.svg"
+    import t from "$lib/trad/translations";
 
     export let title: string;
     export let imageURI: string;
@@ -12,7 +13,7 @@
 <div class="project">
     <img src={imageURI} alt={title}>
     <span class="title">
-        <h3>{title}</h3>
+        <h3>{$t(title)}</h3>
         {#if link != ""}
 
             {#if link.includes("github")}
@@ -24,7 +25,7 @@
         {/if}
     </span> 
     <div class="project-details">
-        {#each description.split("\n") as desc}
+        {#each $t(description).split("\n") as desc}
             <p>{desc}</p>
         {/each}
     </div>

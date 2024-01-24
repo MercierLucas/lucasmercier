@@ -10,6 +10,11 @@ export enum Categories
 }
 
 
+export let Langs: { [key: string]: string } = {
+    "🇫🇷": "fr",
+    "🇬🇧": "en",
+}
+
 
 export let Themes: { [key: string]: string } = {
     "🌙": "light-theme",

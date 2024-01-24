@@ -1,4 +1,7 @@
 <script lang="ts">
+    import t from '$lib/trad/translations';
+    import '$lib/styles/style.scss'
+
     export let imageURI:string;
     export let title:string;
     export let where:string;
@@ -9,8 +12,7 @@
 
     //const localImageURI = new URL("../assets/images/"+imageURI, import.meta.url).href;
 
-    export let description:string[];
-    import '$lib/styles/style.scss'
+    export let description:string;
 
 </script>
 
@@ -18,12 +20,12 @@
 <div id="main_container">
     <img src={imageURI} alt="">
     <div>
-        <p>{title}</p>
-        <span id="date">{fromDate} to {toDate},</span>
+        <p>{$t(title)}</p>
+        <span id="date">{$t(fromDate)} {$t("experience.to")} {$t(toDate)},</span>
         <span id="where"><a href={organizationURI} target="_blank" class="highlight">{where}</a> {flag}</span>
         
         <ul>
-            {#each description as desc}
+            {#each $t(description).split("\n") as desc}
             <li>
                 {desc}
             </li>

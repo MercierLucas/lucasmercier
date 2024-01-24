@@ -1,28 +1,31 @@
 <script lang="ts">
     import { onMount } from "svelte";
 	import { createEventDispatcher } from 'svelte';
+    import { Themes, Langs } from '$lib/types';
+    import { lang } from "$lib/trad/translations";
 	
 	const dispatch = createEventDispatcher();
 
-    export let buttonsNames:string[];
+    let langIcons = Object.keys(Langs);
 
 
     function selectButton(buttonID:string)
     {
         // Update css for selected button
-        let buttons:HTMLCollection = document.getElementsByClassName("btn");
+        let buttons:HTMLCollection = document.getElementsByClassName("lang-btn");
         for (let index = 0; index < buttons.length; index++)
         {
             let btn:HTMLButtonElement = buttons[index] as HTMLButtonElement;
             let id:string  = btn.getAttribute("id") ?? "";
             let classes:string = btn.getAttribute("class") ?? "";
-            classes = classes.replace(" selected-btn", "");
+            classes = classes.replace(" selected-lang-btn", "");
             
             if(id == buttonID)
             {
-                classes += " selected-btn";
-                dispatch("button_click", {"buttonID":id});
-                console.log(id);
+                // let lang = Langs[buttonID]
+                lang.set(Langs[buttonID]);
+                classes += " selected-lang-btn";
+                // localStorage.setItem("lang",)
             }
             btn.setAttribute("class", classes);
             //tab.setAttribute("style", "")
@@ -32,10 +35,10 @@
     onMount(async ()=>
     {
         
-        selectButton(buttonsNames[0]);
+        selectButton(langIcons[1]);
 
         // Define click handler
-        let buttons:HTMLCollection = document.getElementsByClassName("btn");
+        let buttons:HTMLCollection = document.getElementsByClassName("lang-btn");
         for (let index = 0; index < buttons.length; index++)
         {
             let btn:HTMLButtonElement = buttons[index] as HTMLButtonElement;
@@ -47,15 +50,15 @@
     })
 </script>
 
-<div class="btn-container">
-    {#each buttonsNames as btnName}
-        <button id={btnName} class="btn selected-btn">{btnName}</button>
+<div class="lang-btn-container">
+    {#each langIcons as btnName}
+        <button id={btnName} class="lang-btn selected-lang-btn">{btnName}</button>
     {/each}
 </div>
 
 
 <style>
-    .btn-container
+    .lang-btn-container
     {
         border-radius: 5px;
         background-color: #F2F2F8;
@@ -70,7 +73,7 @@
         cursor: pointer;
     }
 
-    .selected-btn
+    .selected-lang-btn
     {
         background-color: var(--color-background);
         color: var(--color-constrast-low);

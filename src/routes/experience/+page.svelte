@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import {t, lang} from '$lib/trad/translations';
 
     import ets from "$lib/assets/images/ets.png"
     import isep from "$lib/assets/images/isep.png"
@@ -15,84 +16,64 @@
 
     let educationExperiences = [
         {
-            title: "PhD student - Computer vision",
+            title: "experience.phd_title",
             flag: "🇨🇦",
             where: "ETS - Ecole de technologie supérieure, Montreal, Canada",
             organizationURI: "https://www.etsmtl.ca/laboratoires/lio",
             imageURI: ets,
-            fromDate: "January 2022", toDate: "Now",
-            description: [
-                "Human pose estimation applied to video movement analysis to compute biomecanical parameters",
-                "Infrared and RGB-D cameras spatial and temporal synchonization"
-            ]
+            fromDate: "experience.phd_from", toDate: "experience.phd_to",
+            description: "experience.phd_description"
         },
         {
-            title: "Engineering diploma - Computer science",
+            title: "experience.isep_title",
             where: "ISEP, Paris, France",
             flag: "🇫🇷",
             organizationURI: "https://www.isep.fr/",
             imageURI: isep,
-            fromDate: "2016", toDate: "2021",
-            description: [
-                "Specialization - Data science (2 years): Databases technologies (SQL/NoSQL), Computer vision research project (see 'projects') and Deep learning",
-                "Core curriculum (1 year): Autonomous home project: Arduino board to gather sensors data and manage them with a web interface (see 'projects' for more)",
-                "Preparatory classes (2 years): Mathematics, physics and signal processing"
-            ]
+            fromDate: "experience.isep_from", toDate: "experience.isep_to",
+            description: "experience.isep_description"
         },
         {
-            title: "Abroad semester - Ethics and developpement",
+            title: "experience.wales_title",
             flag: "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
             where: "Wrexham Glyndŵr University, Wales, UK",
             organizationURI: "https://glyndwr.ac.uk/",
             imageURI: glyndwr,
-            fromDate: "January 2018", toDate: "June 2018",
-            description: [
-                "Ethics applied to computer science",
-                "Desktop application developpment (C# / .NET)",
-                "Mobile application developpment (Java / Android)"
-            ]
+            fromDate: "experience.wales_from", toDate: "experience.wales_to",
+            description: "experience.wales_description"
         },
     ]
 
     let workExperiences = [
         {
-            title: "Research assistant",
+            title: "experience.lio_assist_title",
             flag: "🇨🇦",
             where: "Laboratoire en imagerie et orthopédie, Montreal, Canada",
             organizationURI: "https://www.etsmtl.ca/laboratoires/lio",
             imageURI: lio,
-            fromDate: "February 2021", toDate: "Now",
-            description: [
-                "Developpement: Internal tool for 3D model reconstruction from CT scans (C++)",
-                "Member of quality system board: Reorganization of quality system and creation of 'Good practices in software developpment' training for lab members"
-
-            ]
+            fromDate: "experience.lio_assist_from", toDate: "experience.lio_assist_to",
+            description: "experience.lio_assist_description"
         },
         {
-            title: "R&D computer vision intern",
+            title: "experience.boxy_title",
             flag: "🇫🇷", 
             where: "Boxy, France",
             organizationURI: "https://www.getboxy.co/",
             imageURI: boxy,
-            fromDate: "February 2021", toDate: "August 2021",
-            description: [
-                "Multiple object tracking (MOT) algorithm benchmark for person tracking in autonomous store (Torch / TensorFlow)",
-                "Pre and post processing for smoothing tracking detections"
-            ]
+            fromDate: "experience.boxy_from", toDate: "experience.boxy_to",
+            description: "experience.boxy_description"
         },
         {
-            title: "Web developper intern",
+            title: "experience.pinewood_title",
             flag: "🇬🇧",
             where: "Pinewood Technologies, Birmingham UK",
             organizationURI: "https://www.pinewood.co.uk/",
             imageURI: pinewood,
-            fromDate: "February 2020", toDate: "Jun 2020",
-            description: [
-                "Front end: ASP / JS / HTML / CSS",
-                "Backend: API developpement with C# .NET / Postman and database technologies VB.NET / SQL"
-            ]
+            fromDate: "experience.pinewood_from", toDate: "experience.pinewood_to",
+            description: "experience.pinewood_description"
         }
     ]
+    
 
     function showTab(tabID:string)
     {
@@ -147,20 +128,18 @@
 
 <div class="btn-container">
     <div>
-        <button data-tab="work" class="tabbtn">Work</button>
-        <button data-tab="education" class="tabbtn selected-tab">Education</button>
+        <button data-tab="work" class="tabbtn">{$t("experience.work")}</button>
+        <button data-tab="education" class="tabbtn selected-tab">{$t("experience.education")}</button>
     </div>
 </div>
 
 <div class="container">
     <div id="education" class="tab">
-        <h2>Education</h2>
         {#each educationExperiences as exp}
             <Experience {...exp}/>
         {/each}
     </div>
     <div id="work" class="tab">
-        <h2>Work</h2>
         {#each workExperiences as exp}
             <Experience {...exp}/>
         {/each}

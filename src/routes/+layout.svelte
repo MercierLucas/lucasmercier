@@ -15,6 +15,12 @@
     let selectedTheme = "🌙";
     export let data;
 
+
+    function langChange(lang:string)
+    {
+        console.log("LANG" +lang)
+    }
+
     
     function themeChange(icon:string)
     {
@@ -30,6 +36,7 @@
         });
 
         window.document.body.classList.add(selectedTheme);
+        // console.log(icon)
     }
 
     onMount(async () => {
@@ -40,7 +47,11 @@
 
 </script>
 
-<Header on:button_click={(e) => themeChange(e.detail?.buttonID)} uri={data.url}/>
+<Header
+    on:lang_change={(e)=> langChange(e.detail?.buttonID)}
+    on:button_click={(e) => themeChange(e.detail?.buttonID)}
+    uri={data.url}
+/>
 
 <main>
     <PageTransition url={data.url}>

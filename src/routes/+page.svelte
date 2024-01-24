@@ -3,6 +3,7 @@
     import github from "$lib/assets/images/github.svg"
     import linkedin from "$lib/assets/images/linkedin.svg"
     import plane from "$lib/assets/images/paper-plane.svg"
+    import t from "$lib/trad/translations";
 </script>
 
 
@@ -10,7 +11,7 @@
     <div class="center">
         <img src={profile} alt="Profile" class="profile">
         <p>🇫🇷 Lucas Mercier</p>
-        <p>PhD Student @ <a href="https://www.etsmtl.ca/laboratoires/lio" class="highlight" target="_blank">LIO</a></p>
+        <p>{$t("homepage.phd")} @ <a href="https://www.etsmtl.ca/laboratoires/lio" class="highlight" target="_blank">LIO</a></p>
         <p>🇨🇦 Montreal, Canada</p>
         <div class="icons">
             <div><a href="https://github.com/MercierLucas" target="_blank"><img src={github} alt="" class="icon"></a></div>
@@ -19,27 +20,27 @@
         </div>
     </div>
     <div>
-        <h1>Hi</h1>
-        <p>I'm Lucas Mercier, a PhD student living in Montreal. </p>
+        <h1>{$t("homepage.title")}</h1>
+        <p>{$t("homepage.subtitle")}</p>
 
         <div class="two-columns">
             <div>
-                <h3>Center of interest</h3>
+                <h3>{$t("homepage.interest")}</h3>
                 <ul>
                     <li>Computer vision</li>
                     <li>Human pose estimation</li>
-                    <li>Biomechanics</li>
-                    <li>Game developpement</li>
-                    <li>Sports (kick-boxing and swimming)</li>
+                    <li>{$t("homepage.biomecanics")}</li>
+                    <li>{$t("homepage.gamedev")}</li>
+                    <li>{$t("homepage.sports")}</li>
                 </ul>
             </div>
             <div>
                 <h3>Experience</h3>
                 <ul>
-                    <li>PhD student, pose estimation applied to biomechanic</li>
-                    <li>Engineering diploma</li>
-                    <li>Computer vision internship</li>
-                    <li><a href="/experience" class="highlight">See more</a></li>
+                    <li>{$t("homepage.phd_title")}</li>
+                    <li>{$t("homepage.engineer")}</li>
+                    <li>{$t("homepage.internship")}Computer vision internship</li>
+                    <li><a href="/experience" class="highlight">{$t("homepage.more")}</a></li>
                 </ul>
             </div>
         </div>

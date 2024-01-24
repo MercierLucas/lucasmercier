@@ -1,11 +1,13 @@
 <script>
     import linkedin from "$lib/assets/images/linkedin.svg"
     import plane from "$lib/assets/images/paper-plane.svg"
+
+    import t from "$lib/trad/translations";
 </script>
 
 
-<h1>Want to have a chat?</h1>
-<h2>Feel free to connect</h2>
+<h1>{$t("contact.chat")}</h1>
+<h2>{$t("contact.connect")}</h2>
 <div>
     <div>
         <img src={linkedin} alt="" class="icon">

@@ -1,13 +1,35 @@
 <script lang="ts">
-    import { Themes } from '$lib/types';
+    import { onMount, createEventDispatcher } from "svelte";
+    import { Themes, Langs } from '$lib/types';
     import Buttongroup from './Buttongroup.svelte';
-    import '$lib/styles/style.scss'
+    import LanguageSelector from "./LanguageSelector.svelte";
+    import '$lib/styles/style.scss';
 
     let themeIcons = Object.keys(Themes);
+    let langIcons = Object.keys(Langs);
+
+    const dispatch = createEventDispatcher();
 
     export let uri:string;
 
     let navLinks = ["Blog", "Experience", "Projects", "Contact"];
+
+
+    function changeLangTrigger(lang:string)
+    {
+        dispatch("lang_change", {"buttonID":lang});
+    }
+
+    function changeThemeTrigger(id:string)
+    {
+        dispatch("theme_change", {"buttonID":id});
+    }
+    
+
+    // onMount(async () => {
+    //     changeLang("🌙");
+    // })
+
 </script>
 
 
@@ -28,6 +50,7 @@
                 {/each}
             </ul>
         </nav>
+        <LanguageSelector/>
         <Buttongroup buttonsNames={themeIcons} on:button_click/>
     </div>
 
