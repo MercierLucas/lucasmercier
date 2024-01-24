@@ -107,7 +107,7 @@ and I try to regroup notes that answer the same questions. For deep learning spe
 
 ![Figure 6: Mindmap example for 3D HPE](https://raw.githubusercontent.com/MercierLucas/lucasmercier/master/src/lib/assets/images/mindmap_obsidian.png)
 
-# Références
+# References
 
 Kipf, T. N., & Welling, M. (2017). _Semi-Supervised Classification with Graph Convolutional Networks_ (arXiv:1609.02907). arXiv. [http://arxiv.org/abs/1609.02907](http://arxiv.org/abs/1609.02907)
 
