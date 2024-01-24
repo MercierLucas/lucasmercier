@@ -49,7 +49,7 @@ If that's the case, I'll dive a bit deeper, by taking a look at introduction and
 
 If observation made by the authors or method looks promising I'll add it to Zotero and add tags:
 
-![Figure 1: Zotero tags](blog_workflow_academic_zotero_tags.png)
+![Figure 1: Zotero tags](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/blog_workflow_academic_zotero_tags.png)
 
 Tags are very specific to your topic. In my case (computer vision using deep learning), tags represents:
 - The task: here *3d_human_pose_estimation* and *human_mesh_recovery*
@@ -58,7 +58,7 @@ Tags are very specific to your topic. In my case (computer vision using deep lea
 
 I can then dive deeper into the article be reading more carefully the method, results and so on. At that point I'll generally highlight stuff, add annotations and a side note. For this I'm using the Zotero pdf viewer (should be the default one, otherwise you can change it in preferences).
 
-![Figure 2: Annotation example with (Kipf et Welling, 2017)](blog_workflow_academic_zotero_annotations.png)
+![Figure 2: Annotation example with (Kipf et Welling, 2017)](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/blog_workflow_academic_zotero_annotations.png)
 
 I use the following color code for highlights:
 - Yellow: State of the problem, actual known limitations from the litterature (the *Why?*)
@@ -73,11 +73,11 @@ As mentioned, we will use the [Obsidian Zotero Integration](https://github.com/m
 
 Once installed, you can use the `CTRL + p` to open the command window and search for  *Zotero Integration: Import paper*, or use the `CTRL + SHIFT + O` (make sure tha Zotero is open, otherwise it won't work):
 
-![Figure 3: Import paper from Zotero](zotero_integration_import.png)
+![Figure 3: Import paper from Zotero](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/zotero_integration_import.png)
 
 If we take the same example as before, we get something like:
 
-![Figure 4: Zotero annotation import with (Kipf et Welling, 2017) paper](export_zotero_integration.png)
+![Figure 4: Zotero annotation import with (Kipf et Welling, 2017) paper](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/export_zotero_integration.png)
 
 Be carefull, if you add text directly in the note and you re-import it, those notes will be lost. To prevent this is can add a "persistent" section. To do this take a look at the template I linked, or directly in the [plugin's documentation](https://github.com/mgmeyers/obsidian-zotero-integration/blob/main/docs/Templating.md). 
 
@@ -85,7 +85,7 @@ Be carefull, if you add text directly in the note and you re-import it, those no
 
 In the previous section I said that I'm using tags to represent the method used (in my case the type of network). By doing so you can use the graph to visually discover links between methods as we can see Figure 5:
 
-![Figure 5: Local graph view of the graph_neural_network node](graph_view_gcn.png)
+![Figure 5: Local graph view of the graph_neural_network node](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/graph_view_gcn.png)
 
 
 From this example I can see that *(Liu et al. 2021)*, *(Zhao et al. 2019)* probably uses a similar approach in their paper, so we can regroup those two ones.
@@ -105,7 +105,7 @@ Then I can start to aggregate notes. For this I ask myself different questions:
 - etc.
 and I try to regroup notes that answer the same questions. For deep learning specifically, I create a node for each type of networks (for example Graph Neural Networks) and link intersting papers using those networks.
 
-![Figure 6: Mindmap example for 3D HPE](mindmap_obsidian.png)
+![Figure 6: Mindmap example for 3D HPE](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/images/mindmap_obsidian.png)
 
 # Références
 
