@@ -69,7 +69,7 @@ Once I've added enough materials, I'll import them into Obsidian.
 
 # Importing Zotero data into Obsidian
 
-As mentioned, we will use the [Obsidian Zotero Integration](https://github.com/mgmeyers/obsidian-zotero-integration) plugin. The name is pretty self explanatory. It allows to import annotations (highlights, text etc.) and metadata (date, tags, authors etc.) from Zotero to obsidian by automatically create a new note. A [template](https://github.com/mgmeyers/obsidian-zotero-integration/blob/main/docs/Templating.md) can be defined to tell Obsidian how place this data in a new note. Mine is available [here](temp).
+As mentioned, we will use the [Obsidian Zotero Integration](https://github.com/mgmeyers/obsidian-zotero-integration) plugin. The name is pretty self explanatory. It allows to import annotations (highlights, text etc.) and metadata (date, tags, authors etc.) from Zotero to obsidian by automatically create a new note. A [template](https://github.com/mgmeyers/obsidian-zotero-integration/blob/main/docs/Templating.md) can be defined to tell Obsidian how place this data in a new note. Mine is available [here](https://github.com/MercierLucas/lucasmercier/blob/master/src/lib/assets/files/zotero_integration_template.md).
 
 Once installed, you can use the `CTRL + p` to open the command window and search for  *Zotero Integration: Import paper*, or use the `CTRL + SHIFT + O` (make sure tha Zotero is open, otherwise it won't work):
 
