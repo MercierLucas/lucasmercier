@@ -6,7 +6,7 @@
 </script>
 
 <div>
-    <img src={localImageURI} alt={alt} loading="lazy" />
+    <img src={localImageURI} alt={alt} loading="lazy"/>
     <p>{alt}</p>
 </div>
 
@@ -20,7 +20,8 @@
 
     img
     {
-        height: 100%;
+        max-height: 100%;
+        max-width: 100%;
     }
 
     p
