@@ -26,7 +26,10 @@ export let Trads: { [key: string]: Dictionary } = {
             "phd_title": "Doctorant: estimation de la pose appliquée à la biomécanique",
             "engineer": "Diplôme d'ingénieur, majeure en traitement des données",
             "internship": "Stage R&D en computer vision",
-            "more": "Voir plus"
+            "more": "Voir plus",
+            "news": "Recents",
+            "sara_grant": "05/2024 - Bourse d'excellence pour le développement d'activités de communication scientifique - Bibliothèque ETS",
+            "gti411": "09/2024 - GT411 Imagerie numérique - chargé de laboratoire"
             
         },
         "projects":
@@ -99,7 +102,10 @@ export let Trads: { [key: string]: Dictionary } = {
             "phd_title": "PhD student, pose estimation applied to biomechanic",
             "engineer": "Engineering diploma (Data science major)",
             "internship": "Computer vision internship",
-            "more": "See more"
+            "more": "See more",
+            "news": "News",
+            "sara_grant": "05/2024 - Excellence grant for the development of scientific communication activities - ETS library",
+            "gti411": "09/2024 - GT411 Digital imaging - Tutorial supervisor"
         },
         "projects":
         {

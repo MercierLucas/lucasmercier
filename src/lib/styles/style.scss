@@ -89,6 +89,7 @@ article h4
 }
 
 
+
 .card
 {
     padding: 1rem;
@@ -107,6 +108,14 @@ article h4
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background .5s;
+}
+
+
+.gradient-separator
+{
+  height: 2px;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
 }
 
 .highlight

@@ -44,6 +44,18 @@
                 </ul>
             </div>
         </div>
+
+        <div class="news">
+            <div class="gradient-separator"></div>
+            <div class="news-body">
+                <h3>{$t("homepage.news")}</h3>
+                <ul>
+                    <li>{$t("homepage.gti411")}</li>
+                    <li>{$t("homepage.sara_grant")}</li>
+                </ul>
+            </div>
+            <!-- <p></p> -->
+        </div>
     </div>
 </div>
 
