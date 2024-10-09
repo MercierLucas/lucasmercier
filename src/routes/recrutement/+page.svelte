@@ -1,7 +1,3 @@
-<script>
-    import recrutement from "$lib/assets/images/recrutement.png"
-</script>
-
 
 <main>
     <h2>Recrutement</h2>
@@ -10,9 +6,6 @@
     <div class="center pt-2">
         <div>
             <button><a href="mailto:lucas.mercier.1@ens.etsmtl.ca">Participer!</a></button>
-        </div>
-        <div class="pt-2">
-            <img src={recrutement} alt="Recrutement">
         </div>
     </div>
 
