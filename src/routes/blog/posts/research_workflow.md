@@ -94,7 +94,7 @@ In Obsidian you can find two types of graphs, the [global](https://help.obsidian
 
 # Gathering everything - The MindMAP
 
-Finally, I would like to discuss once of the best Obisdian tool for me, the [canvas](https://obsidian.md/canvas). The main drawback with Obsidian is that after a while you will have a lot of notes and it can be hard to find information you need.
+Finally, I would like to discuss one of the best Obisdian tool for me, the [canvas](https://obsidian.md/canvas). The main drawback with Obsidian is that after a while you will have a lot of notes and it can be hard to find information you need.
 You can aggregate everything using the canvas as a mindmap. 
 
 Let's take an example, my subject is "3D Human Pose Estimation" or "3D HPE". I create a block called "3D HPE" in my canvas (Figure 6). 
