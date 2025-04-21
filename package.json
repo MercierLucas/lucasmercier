@@ -28,7 +28,6 @@
 		"@fontsource/source-sans-pro": "^5.0.0",
 		"@fortawesome/fontawesome-free": "^6.4.0",
 		"@prisma/client": "^6.6.0",
-		"better-sqlite3": "^11.9.1",
 		"rehype-slug": "^5.1.0",
 		"remark-toc": "^8.0.1",
 		"remark-unwrap-images": "^3.0.1"
