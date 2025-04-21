@@ -30,7 +30,7 @@
     <div id="searchbar">
         <input
             type="text"
-            placeholder="Rechercher par ingrédients ou tags (e.g. tomate, salé...)"
+            placeholder="Rechercher par ingrédients ou tags (e.g. tomate, végé...)"
             bind:value={query}
             class="search-input"
         />
