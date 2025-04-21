@@ -3,13 +3,15 @@
 
     export let data;
 
+    
     let scalingFactor = 1/data.recipe.portions;
     let portions = data.recipe.portions;
-
+    
     const images = import.meta.glob('/src/lib/assets/images/recipes/*', {
         eager: true,
         as: 'url'
     });
+    console.log(data.recipe)
 
     const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
 
@@ -33,8 +35,8 @@
             </div>
         </div>
         <div class="banner">
-            <span><i class="fa-solid fa-utensils"></i> {data.recipe.prepTime} min</span>
-            <span><i class="fa-solid fa-fire-burner"></i> {data.recipe.prepTime} min</span>
+            <span><i class="fa-solid fa-utensils"></i> {data.recipe.preptime} min</span>
+            <span><i class="fa-solid fa-fire-burner"></i> {data.recipe.preptime} min</span>
         </div>
     </div>
     <div id="container">

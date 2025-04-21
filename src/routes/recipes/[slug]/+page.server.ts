@@ -17,7 +17,7 @@ export async function load({params})
 	}
 
 	recipe.ingredients = JSON.parse(recipe.ingredients);
-	recipe.steps = recipe.steps.split("\n");
+	recipe.steps = recipe.steps.replace("\r","").replace("\\r","").split("\\n");
     console.log(recipe)
 	return { recipe };
 }

@@ -15,7 +15,7 @@ function checkLocal(request)
 export const load: PageServerLoad = async ({ request }) => {
     checkLocal(request);
 	const recipes = await prisma.recipe.findMany({
-		orderBy: { createdAt: 'desc' }
+		orderBy: { createdat: 'desc' }
 	});
 
 	return { recipes };
@@ -82,8 +82,8 @@ function parseForm(formData) {
     const tools = formData.get("tools");
     const image = formData.get("image");
     const portions = parseInt(formData.get("portions") || 1);
-    const prepTime = parseInt(formData.get("prepTime") || 0);
-    const cookTime = parseInt(formData.get("cookingTime") || 0);
+    const preptime = parseInt(formData.get("preptime") || 0);
+    const cooktime = parseInt(formData.get("cookingTime") || 0);
     const rating = parseInt(formData.get("rating") || 0);
 
     const calories = parseInt(formData.get("calories") || 0);
@@ -101,8 +101,8 @@ function parseForm(formData) {
         tags,
         image,
         portions,
-        prepTime,
-        cookTime,
+        preptime,
+        cooktime,
         rating,
         tools,
         proteins,

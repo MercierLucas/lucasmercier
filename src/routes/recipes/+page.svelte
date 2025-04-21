@@ -53,8 +53,8 @@
                             {/each}
                         </div>
                         <div>
-                            <span><i class="fa-solid fa-utensils"></i> {rec.prepTime} min</span>
-                            <span><i class="fa-solid fa-fire-burner"></i> {rec.prepTime} min</span>
+                            <span><i class="fa-solid fa-utensils"></i> {rec.preptime} min</span>
+                            <span><i class="fa-solid fa-fire-burner"></i> {rec.preptime} min</span>
 
                         </div>
                         <div class="tags">

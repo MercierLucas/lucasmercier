@@ -20,8 +20,8 @@
 	let tagsText = '';
 	let toolsText = '';
 	let rating = 0;
-	let prepTime = 0;
-	let cookTime = 0;
+	let preptime = 0;
+	let cooktime = 0;
 	let portions = 1;
 	let image = '';
     let source = '';
@@ -47,8 +47,8 @@
         portions = recipe.portion;
         stepsText = recipe.steps;
         rating = recipe.rating;
-        prepTime = recipe.prepTime;
-        cookTime = recipe.cookTime;
+        preptime = recipe.preptime;
+        cooktime = recipe.cooktime;
         tagsText = recipe.tags;
         numIngredients = 0;
         calories = recipe.calories;
@@ -169,12 +169,12 @@
 
         <div class="form-item">
             <div >Prep time (minutes)</div>
-            <input type="number" bind:value={prepTime} min="0" name="prepTime"/>
+            <input type="number" bind:value={preptime} min="0" name="preptime"/>
         </div>
 
         <div class="form-item">
             <div >Cooking time (minutes)</div>
-            <input type="number" bind:value={cookTime} min="0" name="cookingTime"  />
+            <input type="number" bind:value={cooktime} min="0" name="cookingTime"  />
         </div>
 
         <div class="form-item">

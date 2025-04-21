@@ -5,7 +5,7 @@ import prisma from '$lib/server/prisma';
 
 export const load: PageServerLoad = async () => {
 	const recipes = await prisma.recipe.findMany({
-		orderBy: { createdAt: 'desc' }
+		orderBy: { createdat: 'desc' }
 	});
 
     recipes.forEach(rec => {
