@@ -11,7 +11,6 @@
         eager: true,
         as: 'url'
     });
-    console.log(data.recipe)
 
     const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
 
