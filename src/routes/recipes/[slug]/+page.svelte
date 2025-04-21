@@ -14,10 +14,6 @@
 
     const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
 
-    function updateQuantities()
-    {
-        console.log(scalingFactor)
-    }
 
 </script>
 
@@ -29,7 +25,7 @@
         <div class="title">
             <h1>{data.recipe.name}</h1>
             <div class="portions">
-                <input type="number" bind:value={portions} on:input={updateQuantities}>
+                <input type="number" bind:value={portions}>
                 <i class="fa-regular fa-user"></i>
             </div>
         </div>
