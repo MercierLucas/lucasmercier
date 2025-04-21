@@ -7,7 +7,7 @@ function checkLocal(request)
 {
     const isLocal = request.headers.get('host')?.startsWith('localhost');
 	if (!isLocal) {
-		throw new Error('Not allowed');
+        throw error(404, 'Page not found');
 	}
 }
 
