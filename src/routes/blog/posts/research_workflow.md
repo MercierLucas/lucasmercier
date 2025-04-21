@@ -56,7 +56,7 @@ Tags are very specific to your topic. In my case (computer vision using deep lea
 - The method: *generative_adversial_network*
 - Additionnal infos such as *semi_supervised_learning* etc.
 
-I can then dive deeper into the article be reading more carefully the method, results and so on. At that point I'll generally highlight stuff, add annotations and a side note. For this I'm using the Zotero pdf viewer (should be the default one, otherwise you can change it in preferences).
+I can then dive deeper into the article by reading more carefully the method, results and so on. At that point I'll generally highlight stuff, add annotations and a side note. For this I'm using the Zotero pdf viewer (should be the default one, otherwise you can change it in preferences).
 
 ![Figure 2: Annotation example with (Kipf et Welling, 2017)](https://raw.githubusercontent.com/MercierLucas/lucasmercier/master/src/lib/assets/images/blog_workflow_academic_zotero_annotations.png)
 

@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Recipe" ADD COLUMN "calories" DECIMAL;
+ALTER TABLE "Recipe" ADD COLUMN "carbs" DECIMAL;
+ALTER TABLE "Recipe" ADD COLUMN "fats" DECIMAL;
+ALTER TABLE "Recipe" ADD COLUMN "proteins" DECIMAL;

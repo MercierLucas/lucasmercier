@@ -38,6 +38,7 @@
 }
 
 
+
 body
 {
   --color-text-secondary: grey;
@@ -47,19 +48,35 @@ body
   --color-constrast-low: rgb(153, 133, 255);
   --color-card: #fcfdfe;
 
-  margin: 0;
-  background: var(--color-background);
+  // margin: 0;
+  // background: var(--color-background);
   color: var(--color-text);
+
+  width: 100vw;
   font-family: sans-serif;
 
   transition: background .3s;
+
 }
   
 main 
 {
-  padding: 1rem;
-  margin: 2rem auto;
-  max-width: 60rem;
+  // padding: 1rem;
+  // margin: 2rem auto;
+  min-width: 500px
+  // width: 100vw;
+  // width: 800px;
+  // overflow-x: hidden;
+  // min-width: 100vw;
+  // max-width: 60rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 60rem;
+  }
 }
 
 a
@@ -89,6 +106,12 @@ article h4
 }
 
 
+
+input[type=text]
+{
+  font-family: 'Source Sans Pro';
+  font-size: 13pt;
+}
 
 .card
 {
