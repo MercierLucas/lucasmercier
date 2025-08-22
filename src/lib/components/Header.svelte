@@ -12,7 +12,7 @@
 
     export let uri:string;
 
-    let navLinks = ["Blog", "Experience", "Projects", "Contact"];
+    let navLinks = ["Experience","Research","Blog", "Projects", "Contact"];
 
 
     function changeLangTrigger(lang:string)

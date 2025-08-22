@@ -1,6 +1,4 @@
 <script lang="ts">
-    import RecipeTag from '$lib/components/RecipeTag.svelte';
-
     export let data;
 
     
@@ -154,6 +152,7 @@
         color:white;
         padding: 5px;
         display: grid;
+        text-align: center;
         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
         place-items: center;
     }
