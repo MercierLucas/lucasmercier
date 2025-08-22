@@ -32,6 +32,10 @@ export let Trads: { [key: string]: Dictionary } = {
             "gti411": "09/2024 - GT411 Imagerie numérique - chargé de laboratoire"
             
         },
+        "research":
+        {
+            "sciencitif_communication": "Communications scientifiques"
+        },
         "projects":
         {
             "title": "Quelques projets auquels j'ai participé",
@@ -106,6 +110,10 @@ export let Trads: { [key: string]: Dictionary } = {
             "news": "News",
             "sara_grant": "05/2024 - Excellence grant for the development of scientific communication activities - ETS library",
             "gti411": "09/2024 - GT411 Digital imaging - Tutorial supervisor"
+        },
+        "research":
+        {
+            "sciencitif_communication": "Scientific communications"
         },
         "projects":
         {

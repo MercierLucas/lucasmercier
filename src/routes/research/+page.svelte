@@ -4,7 +4,7 @@
 
     import t from "$lib/trad/translations";
 
-    let publications = [
+    let communications = [
         {
             title: "Framework for the application of markerless motion capture to biomechanics",
             year: 2025, link: "https://hal.science/hal-05191715",
@@ -15,14 +15,20 @@
             year: 2025, link: "https://hal.science/hal-05191769",
             authors: "A Naaïm, J Rozaire, L Mercier, M Begon, Y Cherni"
         },
+        {
+            title: "Evaluation of 3D marker-less motion capture precision in upper limb children movement, International Society of Biomechanics, Stockholm",
+            year: 2025, link: "",
+            authors: "A. Naaim, J. Rozaire, L. Mercier, S. Duprey, M. Begon"
+        },
     ]
+
 
 </script>
 
 
-<h1>Publications</h1>
-<div >
-    {#each publications as pub}
+<h1>{$t("research.sciencitif_communication")}</h1>
+<div>
+    {#each communications as pub}
         <div class="three-cols">
             <div>{pub.year}</div>
             <div>
@@ -31,13 +37,15 @@
                     {#each pub.authors.split(", ") as auth}
                         <span class={auth.includes('Mercier') ? 'author-main': 'author'}>{auth}</span>
                     {/each}
-                    <!-- {pub.authors} -->
                 </div>
             </div>
-            <div><a href={pub.link} target="_blank">[PDF]</a></div>
+            {#if pub.link}
+                <div><a href={pub.link} target="_blank">[PDF]</a></div>
+            {/if}
         </div>
     {/each}
 </div>
+
 
 <style>
 
