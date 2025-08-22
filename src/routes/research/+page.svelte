@@ -8,16 +8,19 @@
         {
             title: "Framework for the application of markerless motion capture to biomechanics",
             year: 2025, link: "https://hal.science/hal-05191715",
+            conference: "50ème congrès de la société de biomécanique, Marseille",
             authors: "L Mercier, T Cresson, N Mezghani, C Vázquez"
         },
         {
             title: "Marker less motion capture accuracy in children with cerebral palsy and typically developing children",
             year: 2025, link: "https://hal.science/hal-05191769",
+            conference: "50ème congrès de la société de biomécanique, Marseille",
             authors: "A Naaïm, J Rozaire, L Mercier, M Begon, Y Cherni"
         },
         {
-            title: "Evaluation of 3D marker-less motion capture precision in upper limb children movement, International Society of Biomechanics, Stockholm",
+            title: "Evaluation of 3D marker-less motion capture precision in upper limb children movement",
             year: 2025, link: "",
+            conference: "International Society of Biomechanics, Stockholm",
             authors: "A. Naaim, J. Rozaire, L. Mercier, S. Duprey, M. Begon"
         },
     ]
@@ -33,6 +36,9 @@
             <div>{pub.year}</div>
             <div>
                 <div>{pub.title}</div>
+                {#if pub.conference}
+                    <div class="conference">{pub.conference}</div>
+                {/if}
                 <div>
                     {#each pub.authors.split(", ") as auth}
                         <span class={auth.includes('Mercier') ? 'author-main': 'author'}>{auth}</span>
@@ -54,6 +60,21 @@
         display: grid;
         grid-template-columns: 1fr 10fr 1fr;
         padding-bottom: 2rem;
+    }
+
+    @media screen and (max-width: 660px) {
+        .three-cols {
+            /* background-color: blue; */
+            grid-template-columns: 2fr 10fr 1fr;
+
+        }
+    
+    }
+
+
+    .conference
+    {
+        color: var(--color-text-secondary);
     }
 
     .author
