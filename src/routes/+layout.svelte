@@ -11,10 +11,11 @@
     import '$lib/styles/style.scss'
     import '$lib/styles/prism-material-dark.css'
 
+    import { page } from '$app/stores'
+
 
     let selectedTheme = "🌙";
     export let data;
-
 
     function langChange(lang:string)
     {

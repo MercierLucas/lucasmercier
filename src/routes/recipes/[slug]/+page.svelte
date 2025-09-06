@@ -10,7 +10,9 @@
         as: 'url'
     });
 
-    const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
+    // const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
+
+    console.log(data.recipe)
 
 
 </script>
@@ -34,7 +36,7 @@
     </div>
     <div id="container">
         <div>
-            <div class="img-holder"><img src={getImage(data.recipe.image)} alt="pizza" class="logo"></div>
+            <div class="img-holder"><img src={data.recipe.image} alt="pizza" class="logo"></div>
             
             <div id="ingredients">
                 <h3>Ingrédients</h3>

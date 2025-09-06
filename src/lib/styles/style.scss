@@ -42,14 +42,14 @@
 body
 {
   --color-text-secondary: grey;
-  --color-background: #FFFFFF;
+  --color-background: var(--color-background);
   --color-gradient-start: #FF3584;
   --color-gradient-end: #FF6C4A;
   --color-constrast-low: rgb(153, 133, 255);
   --color-card: #fcfdfe;
 
   // margin: 0;
-  // background: var(--color-background);
+  background: var(--color-background);
   color: var(--color-text);
 
   width: 100vw;
@@ -113,6 +113,14 @@ input[type=text]
   font-family: 'Source Sans Pro';
   font-size: 13pt;
 }
+
+input[type=password]
+{
+  font-family: 'Source Sans Pro';
+  font-size: 13pt;
+}
+
+
 
 .card
 {
@@ -185,4 +193,26 @@ h6 > a {
 
   border-bottom: 1px solid grey;
 
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+.pad-bottom-1rem
+{
+  padding-bottom: 1rem;
 }

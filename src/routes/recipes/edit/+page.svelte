@@ -1,16 +1,5 @@
 <script lang="ts">
 
-
-	// let name = '';
-	// let ingredientsText = '';
-	// let stepsText = '';
-	// let tagsText = '';
-	// let toolsText = '';
-	// let rating = 5;
-	// let time = 0;
-	// let portions = 1;
-	// let image = '';
-
     let numIngredients = 1;
 
     let recipeID = null;
@@ -29,6 +18,8 @@
     let proteins = '';
     let fats = '';
     let carbs = '';
+
+    let uploadText = 'No image';
 
 
     export let data;
@@ -57,6 +48,10 @@
         proteins = recipe.proteins;
         portions = recipe.portions;
         image = recipe.image;
+        if(image)
+        {
+            uploadText = "Image uploaded ✅";
+        }
         source = recipe.source;
 
         console.log("Calories:", recipe.calories)
@@ -67,10 +62,32 @@
         actionBtn = "Update recipe "+name
     }
 
+    async function uploadImage(event: Event) {
+        const input = event.target as HTMLInputElement;
+        if (!input.files?.length) return;
+
+        uploadText = "Uploading please wait ..."
+
+        const formData = new FormData();
+        formData.append('file', input.files[0]);
+
+        const res = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData
+            });
+
+        const data = await res.json();
+        console.log('Uploaded:', data);
+        image = data.url;
+
+        uploadText = "Image uploaded ✅";
+    }
+
 
 </script>
 
 <main>
+    <div class="pad-bottom-1rem"><a href="../recipes" class="highlight">← Return to recipes</a></div>
     <div>
         <div class="recipe-item banner">
             <span>ID</span>
@@ -112,7 +129,6 @@
 
         <div class="form-item">
             <div >Ingredients</div>
-
             <div>
                 <div id="ingredients-form">
                     {#if mode == "add"}
@@ -153,7 +169,7 @@
         </div>
 
         <div class="form-item">
-            <div >Tags (comma-separated)</div>
+            <div>Tags (comma-separated)</div>
             <input bind:value={tagsText} name="tags"  />
         </div>
 
@@ -182,9 +198,11 @@
             <input type="number" bind:value={portions} min="1" name="portions"/>
         </div>
 
-        <div class="form-item">
+        <div class="form-item-3">
+            <input type="hidden" name="image" bind:value={image}>
             <div >Image (filename or URL)</div>
-            <input bind:value={image} name="image"/>
+            <div>{uploadText}</div>
+            <div><input type="file" on:change={uploadImage} /></div>
         </div>
 
         <div class="form-item">
@@ -262,5 +280,12 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
+
+    .form-item-3
+    {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+    }
+
 
 </style>

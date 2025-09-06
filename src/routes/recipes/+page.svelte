@@ -1,6 +1,7 @@
 <script lang="ts">
     import RecipeTag from '$lib/components/RecipeTag.svelte';
 	export let data;
+    import { page } from '$app/stores'
 
     let query = "";
 
@@ -9,9 +10,9 @@
         as: 'url'
     });
 
-    console.log(data.recipes[0].tags.some)
+    // console.log(data.recipes)
 
-    const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
+    // const getImage = (filename:string) => Object.entries(images).find(([path]) => path.endsWith(filename))?.[1];
 
     $: filtered = data.recipes.filter(recipe => {
         const q = query.toLowerCase();
@@ -28,13 +29,17 @@
 
 <main>
     <div id="searchbar">
-        <input
-            type="text"
-            placeholder="Rechercher par ingrédients ou tags (e.g. tomate, végé...)"
-            bind:value={query}
-            class="search-input"
-        />
-
+        <div>
+            <input
+                type="text"
+                placeholder="Rechercher par ingrédients ou tags (e.g. tomate, végé...)"
+                bind:value={query}
+                class="search-input"
+            />
+        </div>
+        {#if $page.data.user}
+            <div><button><a href="recipes/edit" class="add-btn">Add</a></button></div>
+        {/if}
     </div>
 
     
@@ -42,7 +47,7 @@
         <div id="recipes_container">
             {#each filtered as rec}
                 <div class="card recipe-item">
-                    <img src={getImage(rec.image)} alt="logo" class="logo">
+                    <img src={rec.image} alt="logo" class="logo">
                     <div class="content">
                         <div>
                             <a href={"/recipes/"+rec.id}>{rec.name}</a>
@@ -83,6 +88,9 @@
     #searchbar
     {
         padding-bottom: 3rem;
+        display: grid;
+        grid-template-columns: 11fr 1fr;
+
     }
 
     #recipes_container

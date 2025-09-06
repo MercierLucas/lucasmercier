@@ -9,12 +9,15 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
+	"prisma": {
+		"seed": "node prisma/seed.js"
+	},
 	"devDependencies": {
 		"@jsdevtools/rehype-toc": "^3.0.2",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"mdsvex": "^0.10.6",
-		"prisma": "^6.6.0",
+		"prisma": "^6.15.0",
 		"sass": "^1.62.1",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
@@ -27,7 +30,11 @@
 		"@fontsource/roboto-serif": "^5.0.0",
 		"@fontsource/source-sans-pro": "^5.0.0",
 		"@fortawesome/fontawesome-free": "^6.4.0",
-		"@prisma/client": "^6.6.0",
+		"@libsql/client": "^0.15.14",
+		"@prisma/adapter-libsql": "^6.15.0",
+		"@prisma/client": "^6.15.0",
+		"@supabase/supabase-js": "^2.57.2",
+		"bcrypt": "^6.0.0",
 		"rehype-slug": "^5.1.0",
 		"remark-toc": "^8.0.1",
 		"remark-unwrap-images": "^3.0.1"

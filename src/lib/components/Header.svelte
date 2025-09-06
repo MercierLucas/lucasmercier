@@ -4,6 +4,7 @@
     import Buttongroup from './Buttongroup.svelte';
     import LanguageSelector from "./LanguageSelector.svelte";
     import '$lib/styles/style.scss';
+    import { page } from "$app/stores";
 
     let themeIcons = Object.keys(Themes);
     let langIcons = Object.keys(Langs);
@@ -13,6 +14,11 @@
     export let uri:string;
 
     let navLinks = ["Experience","Research","Blog", "Projects", "Contact"];
+
+    if($page.data.user)
+    {
+        navLinks.push("Recipes")   
+    }
 
 
     function changeLangTrigger(lang:string)
@@ -52,6 +58,14 @@
         </nav>
         <LanguageSelector/>
         <Buttongroup buttonsNames={themeIcons} on:button_click/>
+        {#if $page.data.user}
+            <div class="display-flex">
+                <a class="baritem" href="dashboard"><i class="fa-solid fa-user"></a>
+                <form action="/logout" method="POST" class="baritem">
+                    <button type="submit" id="logout"><i class="fa-solid fa-door-open"></i></button>
+                </form>
+            </div>
+        {/if}
     </div>
 
 </header>
@@ -104,6 +118,34 @@
     a:hover 
     {
         border-bottom: 1px solid var(--color-gradient-end);
+    }
+
+    #logout
+    {
+        border: none;
+        background: none;
+    }
+    #logout:hover
+    {
+        cursor: pointer;
+    }
+
+    .baritem
+    {
+        // border: 1px solid red;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    // .baritem i
+    // {
+    //     padding-top: 1rem;
+    // }
+
+    .display-flex
+    {
+        display: flex;
+        text-align: center;
     }
 
 

@@ -1,24 +1,23 @@
-import prisma from '$lib/server/prisma';
+import prisma from '$lib/database/prisma';
 import { fail, redirect, error } from '@sveltejs/kit'
 import type { Action, Actions, PageServerLoad } from './$types'
 
 
-function checkLocal(request)
-{
-    const isLocal = request.headers.get('host')?.startsWith('localhost');
-	if (!isLocal) {
-        throw error(404, 'Page not found');
-	}
-}
 
 
-export const load: PageServerLoad = async ({ request }) => {
-    checkLocal(request);
+export const load: PageServerLoad = async ({ cookies }) => {
+    let session = cookies.get("session");
+    if(!session)
+    {
+        throw redirect(301, "/recipes")
+    }
+
+
 	const recipes = await prisma.recipe.findMany({
 		orderBy: { createdat: 'desc' }
 	});
 
-	return { recipes };
+	return { recipes:recipes };
 };
 
 
@@ -53,8 +52,11 @@ function getIngredients(formData)
     return ingredients;
 }
 
-const deleteRecipe: Action = async({request}) => {
-    checkLocal(request);
+const deleteRecipe: Action = async({request, locals}) => {
+    if(!locals.user || locals.user.role != "ADMIN")
+    {
+        throw redirect(301, "/recipes")
+    }
     const formData = await request.formData();
     const id = Number(formData.get('id'));
 
@@ -93,6 +95,8 @@ function parseForm(formData) {
 
     let ingredients = JSON.stringify(getIngredients(formData));
 
+    const addedByUser = "";
+
     return {
         name,
         source,
@@ -108,13 +112,17 @@ function parseForm(formData) {
         proteins,
         calories,
         carbs,
-        fats
+        fats,
+        addedByUser
     }
 }
 
 
-const edit: Action = async({request}) => {
-    checkLocal(request);
+const edit: Action = async({request, locals}) => {
+    if(!locals.user)
+    {
+        throw redirect(301, "/recipes")
+    }
     const formData = await request.formData();
 
     const id = Number(formData.get('id'));
@@ -138,11 +146,15 @@ const edit: Action = async({request}) => {
     redirect(303, `/recipes/admin}`);
 }
 
-const add: Action = async({request}) => {
-    checkLocal(request);
+const add: Action = async({request, locals}) => {
+    if(!locals.user)
+    {
+        throw redirect(301, "/recipes")
+    }
     const formData = await request.formData()
 
     const data = parseForm(formData);
+    data.addedByUser = locals.user.name;
 
     try {
         // Insert the new recipe into the database using Prisma

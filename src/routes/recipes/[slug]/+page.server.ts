@@ -1,11 +1,12 @@
-import prisma from '$lib/server/prisma';
+import prisma from '$lib/database/prisma';
+import { redirect } from '@sveltejs/kit';
 
 
 export async function load({params})
 {
 	const id = Number(params.slug);
 	if (isNaN(id)) {
-		throw new Error('Invalid recipe ID');
+		throw redirect(302, '/recipes');
 	}
 
 	const recipe = await prisma.recipe.findUnique({
@@ -17,7 +18,10 @@ export async function load({params})
 	}
 
 	recipe.ingredients = JSON.parse(recipe.ingredients);
-	recipe.steps = recipe.steps.replace("\r","").replace("\\r","").split("\\n");
+	if(recipe.steps)
+	{
+		recipe.steps = JSON.parse(recipe.steps);
+	}
     console.log(recipe)
 	return { recipe };
 }

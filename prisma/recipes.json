@@ -1,0 +1,58 @@
+[
+    {
+        
+        "name": "Protein dough",
+        "source": "",
+        "steps": ["Mix all"],
+        "ingredients": [
+            {"name": "Poudre d'amande", "quantity": "10", "unit":"g"},
+            {"name": "Beurre de cacahuètes", "quantity": "10", "unit":"g"},
+            {"name": "Whey", "quantity": "30", "unit":"g"}
+        ],
+        "tags": "snack,rapide",
+        "image": "",
+        "portions": 1,
+        "preptime": 5,
+        "cooktime": 0,
+        "rating": 5,
+        "tools": [],
+        "proteins": 25,
+        "calories": 226,
+        "carbs": 9,
+        "fats": 11,
+        "addedByUser": "Lucas"
+    },
+    {
+        "name": "Butter chicken / tofu",
+        "ingredients": [
+            {"name": "Poulet / Tofu", "quantity": "500", "unit":"g"},
+            {"name": "Chili", "quantity": "1.5", "unit":"tbsp"},
+            {"name": "Cumin", "quantity": "0.5", "unit":"tsp"},
+            {"name": "Coriandre", "quantity": "0", "unit":"g"},
+            {"name": "Curcuma", "quantity": "0.5", "unit":"tsp"},
+            {"name": "Garam masala", "quantity": "0.5", "unit":"tsp"},
+            {"name": "Ail", "quantity": "1", "unit":"gousse"},
+            {"name": "Gingembre", "quantity": "1", "unit":"tbsp"},
+            {"name": "Jus de citron", "quantity": "0.5", "unit":""},
+            {"name": "Beurre", "quantity": "50", "unit":"g"},
+            {"name": "Oignon", "quantity": "1", "unit":""},
+            {"name": "Tomates", "quantity": "3", "unit":""},
+            {"name": "Noix de cajou", "quantity": "30", "unit":""},
+            {"name": "Eau", "quantity": "0.5", "unit":"cup"}
+        ],
+        "steps": ["Torrefier les épices à la poelle", "Ajouter oignon et ail", "Faire le reste"],
+        "preptime": 5,
+        "cooktime": 0,
+        "portions": 6,
+        "tools": ["poelle", "blender"],
+        "tags": "végé",
+        "rating": 3,
+        "image": "butter_tofu.jpg",
+        "proteins": 25,
+        "calories": 226,
+        "carbs": 9,
+        "fats": 11,
+        "addedByUser": "Lucas"
+
+    }
+]
