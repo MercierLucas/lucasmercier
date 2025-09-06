@@ -6,6 +6,8 @@ import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import toc from '@jsdevtools/rehype-toc';
 
+import path from 'path';
+
 
 /** @type {import('@sveltejs/kit').Config} */
 
@@ -13,7 +15,7 @@ import toc from '@jsdevtools/rehype-toc';
 const mdsvexOptions = {
 	extensions: ['.md'],
 	layout: {
-		_: './src/lib/mdsvex.svelte'
+		_: path.resolve('src/lib/mdsvex.svelte')
 	},
 	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
 	rehypePlugins: [rehypeSlug, toc]
