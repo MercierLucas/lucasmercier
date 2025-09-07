@@ -43,7 +43,7 @@
                 </div>
             </div>
             {#if pub.link}
-                <div><a href={pub.link} target="_blank">[PDF]</a></div>
+                <div><a href={pub.link} target="_blank" class="highlight">[PDF]</a></div>
             {/if}
         </div>
     {/each}

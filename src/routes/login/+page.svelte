@@ -9,9 +9,6 @@
         <div id="sub-wrapper">
 
             <div class="align-center" id="login-form">
-                <div id="title">
-                    <h1>Login</h1>
-                </div>
                 <form id="login-inputs" action="?/login" method="POST">
         
                     <div>
@@ -30,8 +27,8 @@
                         <p class="error">You have entered the wrong credentials.</p>
                     {/if}
         
-                    <div>
-                        <input type="submit" value="Login">
+                    <div style="text-align: center;">
+                        <input type="submit" value="Login" class="sober-btn">
                     </div>
         
                 </form>

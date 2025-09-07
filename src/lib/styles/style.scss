@@ -63,8 +63,9 @@ main
 {
   // padding: 1rem;
   // margin: 2rem auto;
-  min-width: 400px;
+  min-width: 800px;
   padding: 5px;
+  // background-color: red;
   // width: 100vw;
   // width: 800px;
   // overflow-x: hidden;
@@ -211,6 +212,15 @@ button {
 	background-color: #f4f4f4;
 	outline: none;
 }
+
+.sober-btn{
+  border: none;
+  background-color: #171717;
+  color: #f4f4f4;
+  border-radius: .3rem;
+  // background: none;
+}
+
 
 .pad-bottom-1rem
 {

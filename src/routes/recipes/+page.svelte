@@ -38,7 +38,7 @@
             />
         </div>
         {#if $page.data.user}
-            <div><button><a href="recipes/edit" class="add-btn">Add</a></button></div>
+            <div><button class="sober-btn"><a href="recipes/edit">Add (+)</a></button></div>
         {/if}
     </div>
 
@@ -90,6 +90,7 @@
         padding-bottom: 3rem;
         display: grid;
         grid-template-columns: 11fr 1fr;
+        gap: 1rem;
 
     }
 

@@ -146,6 +146,7 @@
     {
         display: flex;
         text-align: center;
+        align-items: center;
     }
 
 

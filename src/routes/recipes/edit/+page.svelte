@@ -157,7 +157,7 @@
                         {/each}
                     {/if}
                 </div>
-                <button type="button" on:click={()=>numIngredients++}>+</button>
+                <button class="sober-btn" type="button" on:click={()=>numIngredients++}>+</button>
             </div>
 
             <!-- <textarea bind:value={ingredientsText} name="ingredients" /> -->
@@ -235,8 +235,9 @@
     .banner
     {
         background-color: #075526;
-        border-radius: 2px;
-        margin-bottom: 1rem;
+        border-top-left-radius: .3rem;
+        border-top-right-radius: .3rem;
+        /* margin-bottom: 1rem; */
         color:white;
         padding: 5px;
         display: grid;
@@ -247,6 +248,11 @@
     {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        border-bottom: 1px solid #E5E5E5;
+        /* border: 1px solid red; */
+        align-items: center;
+        justify-items: center;
+        
     }
 
     .inline-grid
@@ -254,7 +260,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
         gap:5px;
-        margin-bottom: 5px;
+        /* margin-bottom: 5px; */
     }
 
     .clear-btn
