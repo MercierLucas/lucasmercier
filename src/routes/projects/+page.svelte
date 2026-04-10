@@ -33,13 +33,7 @@
 </div>
 
 <style>
-  .page {
-    --accent: #2D6A4F;
-    font-family: 'DM Sans', sans-serif;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
+
 
   .page-title {
     font-family: 'DM Serif Display', serif;

@@ -372,10 +372,10 @@
     border-left-color: var(--accent);
   }
 
-  .page {
+  /* .page {
     min-width: 0;
     padding: 2rem 1.5rem 4rem 0;
-  }
+  } */
 
   nav {
     display: flex;

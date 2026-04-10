@@ -26,9 +26,9 @@
 header {
     --accent: #2D6A4F;
     font-family: 'DM Sans', sans-serif;
-    max-width: 780px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem 1.5rem 2rem;
   }
 
   nav {
