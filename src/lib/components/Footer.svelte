@@ -5,11 +5,10 @@
 </footer>
 
 <style>
-    footer
-    {
-        padding: 1rem;
-        display: flex;
-        gap: 1rem;
-        text-justify: center;
-    }
+  footer {
+    font-size: 12px;
+    color: var(--color-muted, #999);
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--color-border, #e5e5e5);
+  }
 </style>

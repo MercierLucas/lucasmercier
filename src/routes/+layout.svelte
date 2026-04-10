@@ -56,11 +56,13 @@
 
 <main>
     <PageTransition url={data.url}>
-        <slot />
+        <div id="page">
+            <slot />
+            <Footer />
+        </div>
     </PageTransition>
 </main>
 
-<Footer />
 
 
 <style>
@@ -70,6 +72,14 @@
         font-size: 13pt;
         margin: 0;
         padding: 0;
+    }
+
+    #page {
+        --accent: #2D6A4F;
+        font-family: 'DM Sans', sans-serif;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
     }
 
 

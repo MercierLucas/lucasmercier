@@ -1,153 +1,68 @@
-<script lang="ts">
-    import { onMount, createEventDispatcher } from "svelte";
-    import { Themes, Langs } from '$lib/types';
-    import Buttongroup from './Buttongroup.svelte';
-    import LanguageSelector from "./LanguageSelector.svelte";
-    import '$lib/styles/style.scss';
-    import { page } from "$app/stores";
-
-    let themeIcons = Object.keys(Themes);
-    let langIcons = Object.keys(Langs);
-
-    const dispatch = createEventDispatcher();
-
-    export let uri:string;
-
-    let navLinks = ["Experience","Research","Blog", "Projects", "Contact"];
-
-    if($page.data.user)
-    {
-        navLinks.push("Recipes")   
-    }
-
-
-    function changeLangTrigger(lang:string)
-    {
-        dispatch("lang_change", {"buttonID":lang});
-    }
-
-    function changeThemeTrigger(id:string)
-    {
-        dispatch("theme_change", {"buttonID":id});
-    }
-    
-
-    // onMount(async () => {
-    //     changeLang("🌙");
-    // })
-
-</script>
-
+<svelte:head>
+<title>Lucas Mercier</title>
+<meta name="description" content="PhD student at LIO, ÉTS Montréal. Research in computer vision, human pose estimation and biomechanics." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</svelte:head>
 
 <header>
-    <a href="/" id="logo">LM.</a>
-
-    <div class="horizontal">
-        <nav>
-            <ul>
-                {#each navLinks as nav}
-                    <li>
-                        {#if "/"+nav.toLowerCase() == uri}
-                            <a href={"/"+nav.toLowerCase()} class="selected">{nav}</a>
-                        {:else}
-                            <a href={"/"+nav.toLowerCase()}>{nav}</a>
-                        {/if}
-                    </li>
-                {/each}
-            </ul>
-        </nav>
-        <LanguageSelector/>
-        <Buttongroup buttonsNames={themeIcons} on:button_click/>
-        {#if $page.data.user}
-            <div class="display-flex">
-                <a class="baritem" href="dashboard"><i class="fa-solid fa-user"></a>
-                <form action="/logout" method="POST" class="baritem">
-                    <button type="submit" id="logout"><i class="fa-solid fa-door-open"></i></button>
-                </form>
-            </div>
-        {/if}
-    </div>
-
+    <nav>
+        <span class="nav-name"><a href="/">Lucas Mercier</a></span>
+        <div class="nav-links">
+        <a href="/#publications">Publications</a>
+        <a href="/#teaching">Teaching</a>
+        <a href="/#news">News</a>
+        <a href="/#contact">Contact</a>
+        <a href="/blog">Blog</a>
+        <a href="/projects">Projects</a>
+        </div>
+    </nav>
 </header>
 
 
-<style lang="scss">
-    header
-    {
-        padding: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    #logo
-    {
-        border:1px solid var(--color-text);
-        padding: 1rem;
-    }
+<style>
 
-    ul
-    {
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-        list-style-type: none;
-    }
+header {
+    --accent: #2D6A4F;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
 
-    .selected
-    {
-        border-bottom: 2px solid var(--color-gradient-end);
-        padding-bottom: 2px;
-    }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--color-border, #e5e5e5);
+    margin-bottom: 3rem;
+  }
 
-    .horizontal
-    {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+}
 
-    a
-    {
-        text-decoration: none;
-        color: var(--color-text) !important;
-        font-size: 1.2rem;
-    }
+.nav-name a{
+    text-decoration: none;
+    color: inherit;
 
-    a:hover 
-    {
-        border-bottom: 1px solid var(--color-gradient-end);
-    }
+  }
 
-    #logout
-    {
-        border: none;
-        background: none;
-    }
-    #logout:hover
-    {
-        cursor: pointer;
-    }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
 
-    .baritem
-    {
-        // border: 1px solid red;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--color-muted, #666);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
 
-    // .baritem i
-    // {
-    //     padding-top: 1rem;
-    // }
-
-    .display-flex
-    {
-        display: flex;
-        text-align: center;
-        align-items: center;
-    }
-
-
+  .nav-links a:hover { color: inherit; }
 </style>
