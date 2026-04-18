@@ -14,7 +14,6 @@ export const publications:Publication[] = [
     loc: 'Preprint · 2025',
     badges: [{ label: 'Preprint', type: 'preprint' }],
     links: [
-    { label: 'SSRN', href: 'https://ssrn.com/abstract=6017118' },
     { label: 'DOI', href: 'https://dx.doi.org/10.2139/ssrn.6017118' },
     ],
     image: '/images/publis/2026_job_markers.png'
