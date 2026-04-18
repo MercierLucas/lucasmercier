@@ -1,6 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
+  import { publications, abstracts, presentations } from '$lib/publications';
+  import { news } from '$lib/news';
+    import { a } from '$lib/mdsvex.svelte';
+
   const sections = [
     { id: 'research', label: 'Research interests' },
     { id: 'publications', label: 'Publications' },
@@ -37,54 +41,7 @@
 
   const personalInterests = [];
 
-  const publications = [
-    {
-      title: 'Effect of markers in training dataset for markerless applications in biomechanics',
-      authors: 'Mercier, L., Cresson, T., Gervais, S., Mezghani, N., & Vázquez, C.',
-      venue: 'Preprint · 2025',
-      badge: { label: 'Preprint', type: 'preprint' },
-      links: [
-        { label: 'SSRN', href: 'https://ssrn.com/abstract=6017118' },
-        { label: 'DOI', href: 'https://dx.doi.org/10.2139/ssrn.6017118' },
-      ],
-    },
-  ];
 
-  const abstracts = [
-    {
-      title: 'Framework for the application of markerless motion capture to biomechanics',
-      authors: 'Mercier, L., Cresson, T., Mezghani, N., & Vázquez, C.',
-      venue: 'Multidisciplinary Biomechanics Journal · 2025',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.46298/mbj.16163' }],
-    },
-    {
-      title: 'Marker-less motion capture accuracy in children with cerebral palsy and typically developing children',
-      authors: 'Naaïm, A., Rozaire, J., Mercier, L., Begon, M., & Cherni, Y.',
-      venue: 'Multidisciplinary Biomechanics Journal · 2025',
-      links: [{ label: 'DOI', href: 'https://doi.org/10.46298/mbj.16215' }],
-    },
-  ];
-
-  const presentations = [
-    {
-      title: 'Using knee kinesiography to train markerless pose estimation models for first-line kinematic assessment in knee osteoarthritis',
-      authors: 'Mercier, L., Marois, B., Fuentes, A., Cagnin, A., Cresson, T., & Vazquez, C.',
-      venue: 'OARSI World Congress on Osteoarthritis · April 2026',
-      badges: [{ label: 'Accepted', type: 'accepted' }, { label: 'Poster', type: 'poster' }],
-    },
-    {
-      title: 'Evaluation of 3D marker-less motion capture precision in upper limb children movement',
-      authors: 'Naaim, A., Rozaire, J., Mercier, L., Duprey, S., & Begon, M.',
-      venue: 'International Society of Biomechanics · Stockholm, Sweden · 2025',
-      badges: [{ label: 'Oral', type: 'oral' }],
-    },
-    {
-      title: 'Étude de l\'impact de la présence des marqueurs pour l\'estimation de la pose humaine',
-      authors: 'Mercier, L., Cresson, T., Mezghani, N., & Vázquez, C.',
-      venue: '92e Congrès de l\'Acfas · Montréal, Canada · 2025',
-      badges: [{ label: 'Oral', type: 'oral' }],
-    },
-  ];
 
   const awards = [
     {
@@ -112,20 +69,8 @@
     },
   ];
 
-  const news = [
-    {
-      date: 'Winter 2026',
-      text: 'Visiting PhD Student at Institut de Biomécanique Humaine Georges Charpak',
-    },
-    {
-      date: 'Sep 2024',
-      text: 'Lab instructor for GT411 — Digital Imaging, ÉTS Montréal.',
-    },
-    {
-      date: 'May 2024',
-      text: 'Recipient of the excellence grant for scientific communication activities — ÉTS Library.',
-    },
-  ];
+
+
 </script>
 
 <svelte:head>
@@ -149,6 +94,7 @@
   <div class="page">
 
     <div class="hero">
+    
       <div class="hero-content">
         <h1 class="hero-name">Lucas Mercier</h1>
         <p class="hero-role">
@@ -183,7 +129,8 @@
         </div>
       </div>
       <div class="hero-avatar" aria-hidden="true">
-        <span class="avatar-initials">LM</span>
+        <img src="/images/profile.jpg" alt="Lucas Mercier" />
+        <!-- <span class="avatar-initials">LM</span> -->
       </div>
     </div>
 
@@ -210,7 +157,15 @@
         <div class="ref-item">
           <div>
             <p class="ref-title">{pub.title}</p>
-            <p class="ref-authors">{pub.authors}</p>
+            <p class="ref-authors">
+              {#each  pub.authors as auth}
+                {#if auth.includes('Mercier')}
+                  <span class="authorship">{auth}, </span>
+                {:else}
+                  <span>{auth} ,</span>
+                {/if}
+              {/each}
+            </p>
             <div class="ref-meta">
               <span class="ref-venue">{pub.venue}</span>
               {#if pub.badge}
@@ -229,7 +184,15 @@
         <div class="ref-item">
           <div>
             <p class="ref-title">{ab.title}</p>
-            <p class="ref-authors">{ab.authors}</p>
+            <p class="ref-authors">
+              {#each  ab.authors as auth}
+                {#if auth.includes('Mercier')}
+                  <span class="authorship">{auth}, </span>
+                {:else}
+                  <span>{auth} ,</span>
+                {/if}
+              {/each}
+            </p>
             <div class="ref-meta">
               <span class="ref-venue">{ab.venue}</span>
               {#each ab.links as link}
@@ -245,7 +208,15 @@
         <div class="conf-item">
           <div>
             <p class="ref-title">{pres.title}</p>
-            <p class="ref-authors">{pres.authors}</p>
+            <p class="ref-authors">
+              {#each  pres.authors as auth}
+                {#if auth.includes('Mercier')}
+                  <span class="authorship">{auth}, </span>
+                {:else}
+                  <span>{auth} ,</span>
+                {/if}
+              {/each}
+            </p>
             <p class="ref-venue">{pres.venue}</p>
           </div>
           <div class="conf-badges">
@@ -292,7 +263,7 @@
         {#each news as item}
           <div class="news-item">
             <span class="news-date">{item.date}</span>
-            <span class="news-text">{item.text}</span>
+            <span class="news-text">{@html item.text}</span>
           </div>
         {/each}
       </div>
@@ -372,6 +343,11 @@
     border-left-color: var(--accent);
   }
 
+  .authorship
+  {
+    font-weight: bold;
+  }
+
   /* .page {
     min-width: 0;
     padding: 2rem 1.5rem 4rem 0;
@@ -415,21 +391,22 @@
   }
 
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: 240px;
+    height: 240px;
     border-radius: 12px;
-    background: var(--color-surface, #f5f5f5);
-    border: 0.5px solid var(--color-border, #e5e5e5);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  .avatar-initials {
-    font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--color-muted, #999);
+
+  .hero-avatar img {
+    width: 100%;
+    max-width: 200px; /* adjust to your liking */
+    height: auto;
+    border-radius: 50%; /* optional: makes it a circle */
+    display: block;
   }
 
   .hero-name {
@@ -735,7 +712,7 @@
 
   @media (max-width: 540px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-avatar { display: none; }
+    .hero-avatar { max-width: 150px;}
     nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .nav-links { flex-wrap: wrap; gap: 1rem; }
     .conf-item { grid-template-columns: 1fr; }
