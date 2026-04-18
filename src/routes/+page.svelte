@@ -2,8 +2,9 @@
   import { onMount } from 'svelte';
 
   import { publications, abstracts, presentations } from '$lib/publications';
+  import Publication from '$lib/components/Publication.svelte';
   import { news } from '$lib/news';
-    import { a } from '$lib/mdsvex.svelte';
+  import { a } from '$lib/mdsvex.svelte';
 
   const sections = [
     { id: 'research', label: 'Research interests' },
@@ -142,89 +143,23 @@
             <span class="interest-tag">{interest}</span>
           {/each}
         </div>
-        <div class="interests-divider"></div>
-        <div class="interest-group">
-          {#each personalInterests as interest}
-            <span class="interest-tag personal">{interest}</span>
-          {/each}
-        </div>
       </div>
     </section>
 
     <section id="publications">
       <h2 class="section-label">Publications</h2>
       {#each publications as pub}
-        <div class="ref-item">
-          <div>
-            <p class="ref-title">{pub.title}</p>
-            <p class="ref-authors">
-              {#each  pub.authors as auth}
-                {#if auth.includes('Mercier')}
-                  <span class="authorship">{auth}, </span>
-                {:else}
-                  <span>{auth} ,</span>
-                {/if}
-              {/each}
-            </p>
-            <div class="ref-meta">
-              <span class="ref-venue">{pub.venue}</span>
-              {#if pub.badge}
-                <span class="badge badge-{pub.badge.type}">{pub.badge.label}</span>
-              {/if}
-              {#each pub.links as link}
-                <a class="ref-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} →</a>
-              {/each}
-            </div>
-          </div>
-        </div>
+        <Publication pub={pub}/>
       {/each}
 
       <h3 class="subsection-label">Published abstracts</h3>
       {#each abstracts as ab}
-        <div class="ref-item">
-          <div>
-            <p class="ref-title">{ab.title}</p>
-            <p class="ref-authors">
-              {#each  ab.authors as auth}
-                {#if auth.includes('Mercier')}
-                  <span class="authorship">{auth}, </span>
-                {:else}
-                  <span>{auth} ,</span>
-                {/if}
-              {/each}
-            </p>
-            <div class="ref-meta">
-              <span class="ref-venue">{ab.venue}</span>
-              {#each ab.links as link}
-                <a class="ref-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} →</a>
-              {/each}
-            </div>
-          </div>
-        </div>
+        <Publication pub={ab}/>
       {/each}
 
       <h3 class="subsection-label">Conference presentations</h3>
       {#each presentations as pres}
-        <div class="conf-item">
-          <div>
-            <p class="ref-title">{pres.title}</p>
-            <p class="ref-authors">
-              {#each  pres.authors as auth}
-                {#if auth.includes('Mercier')}
-                  <span class="authorship">{auth}, </span>
-                {:else}
-                  <span>{auth} ,</span>
-                {/if}
-              {/each}
-            </p>
-            <p class="ref-venue">{pres.venue}</p>
-          </div>
-          <div class="conf-badges">
-            {#each pres.badges as badge}
-              <span class="badge badge-{badge.type}">{badge.label}</span>
-            {/each}
-          </div>
-        </div>
+        <Publication pub={pres}/>
       {/each}
 
       <h3 class="subsection-label">Awards & grants</h3>
@@ -343,10 +278,7 @@
     border-left-color: var(--accent);
   }
 
-  .authorship
-  {
-    font-weight: bold;
-  }
+
 
   /* .page {
     min-width: 0;
@@ -528,7 +460,7 @@
     flex-wrap: wrap;
   }
 
-  .ref-venue {
+  .ref-loc {
     font-size: 11px;
     color: var(--color-muted, #999);
   }
