@@ -11,7 +11,7 @@
     import '$lib/styles/style.scss'
     import '$lib/styles/prism-material-dark.css'
 
-    import { page } from '$app/stores'
+    import { page } from '$app/state';
 
 
     let selectedTheme = "🌙";
@@ -48,20 +48,28 @@
 
 </script>
 
-<Header
-    on:lang_change={(e)=> langChange(e.detail?.buttonID)}
-    on:button_click={(e) => themeChange(e.detail?.buttonID)}
-    uri={data.url}
-/>
+<div>
+    {#if page.url.pathname != "/_resume"}
+        <Header
+            // on:lang_change={(e)=> langChange(e.detail?.buttonID)}
+            // on:button_click={(e) => themeChange(e.detail?.buttonID)}
+            // uri={data.url}
+        />
+        
+        <main>
+            <PageTransition url={page.url.pathname}>
+                <div id="page">
+                    <slot />
+                    <Footer />
+                </div>
+            </PageTransition>
+        </main>
+    {:else}
+        <slot />
+    {/if}
 
-<main>
-    <PageTransition url={data.url}>
-        <div id="page">
-            <slot />
-            <Footer />
-        </div>
-    </PageTransition>
-</main>
+
+</div>
 
 
 
@@ -80,6 +88,21 @@
         max-width: 900px;
         margin: 0 auto;
         padding: 0rem 1.5rem 1rem;
+    }
+
+    @media print {
+    /* Reset any global scss that bleeds in */
+    :global(body) {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    :global(html) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     }
 
 

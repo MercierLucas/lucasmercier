@@ -4,7 +4,7 @@
   import { publications, abstracts, presentations } from '$lib/publications';
   import Publication from '$lib/components/Publication.svelte';
   import { news } from '$lib/news';
-  import { a } from '$lib/mdsvex.svelte';
+  import { teaching, awards } from '$lib/resume';
 
   const sections = [
     { id: 'research', label: 'Research interests' },
@@ -41,35 +41,6 @@
   ];
 
   const personalInterests = [];
-
-
-
-  const awards = [
-    {
-      year: '2025',
-      title: 'Bourse de collaboration de recherche — Société de Biomécanique',
-      sub: 'Visiting PhD student · IBHGC',
-    },
-    {
-      year: '2024',
-      title: 'Excellence grant for scientific communication activities',
-      sub: 'ÉTS Library',
-    },
-  ];
-
-  const teaching = [
-    {
-      course: 'GT411 — Digital Imaging',
-      role: 'Lab instructor · designed labs & evaluations',
-      semesters: 'Fall 2024 · Winter 2025 · Fall 2025 · ÉTS Montréal',
-      labs: [
-        'Mini Lightroom — contrast, curves, color space',
-        'Road sign detection — classical CV, no deep learning',
-        'Real-time background removal — non-DL segmentation',
-      ],
-    },
-  ];
-
 
 
 </script>
@@ -380,6 +351,12 @@
     flex-wrap: wrap;
   }
 
+  .social-link svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
   .social-link {
     display: flex;
     align-items: center;
@@ -398,12 +375,6 @@
     color: inherit;
   }
 
-  .social-link svg {
-    width: 12px;
-    height: 12px;
-    fill: currentColor;
-    flex-shrink: 0;
-  }
 
   section {
     margin-bottom: 3rem;

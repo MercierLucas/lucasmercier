@@ -16,6 +16,7 @@
         <a href="/#contact">Contact</a>
         <a href="/blog">Blog</a>
         <a href="/projects">Projects</a>
+        <a href="/resume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 </header>
