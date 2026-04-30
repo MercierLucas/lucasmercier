@@ -18,9 +18,9 @@ export const education: Degree[] = [
     degree: 'Ph.D. in computer science',
     field: 'Medical Imaging',
     start: 'oct 2021',
-    end: 'present',
+    end: 'Present',
     items: [
-        'Developed acquisition software to synchronize RGB and MoCap systems; built inpainting pipeline to remove reflective markers from images; benchmarked and improved SOTA monocular 3D pose estimation models for clinical gait parameters.',
+        'Developed acquisition software to synchronize RGB and MoCap systems; built inpainting pipeline using GANs to remove reflective markers from images; benchmarked and improved SOTA monocular 3D pose estimation models for clinical gait parameters.',
         'Supervisors: Carlos Vázquez, Neila Mezghani, Thierry Cresson'
     ],
     location: 'Montréal, Canada',
@@ -85,9 +85,9 @@ export type Awards = {
 
 export const awards: Awards[] = [
     {
+      title: 'Mobility Scholarship at Institut de Biomécanique Humaine Georges Charpak',
+      sub: 'Société de Biomécanique (International French-speaking Society of Biomechanics)',
       year: 2025,
-      title: 'Bourse de collaboration de recherche',
-      sub: 'Société de Biomécanique',
     },
     {
       year: 2024,
@@ -113,23 +113,35 @@ export const awards: Awards[] = [
 export const experience: Experience[] = [
   {
     title: 'Visiting PhD Student',
-    organization: 'i-biomec Lab',
+    organization: 'Institut de Biomécanique Humaine Georges Charpak',
     type: 'position',
     start: 'Jan 2026',
     end: 'Mar 2026',
     location: 'Paris, France',
     bullets: [
-        'Finetuned and benchmarked SOTA pose estimation model for gait parameter estimation on pathological population',
+        'Finetuned and benchmarked SOTA pose estimation model for gait parameter estimation on pathological populations',
         'Improved these 2D-to-3D lifting models by integrating visual features from RGB frames using multi-scale deformable offset sampling',
     ],
   },
-    {
+  {
+    title: 'Real-time Markerless Pose Estimation for Movement Coaching',
+    organization: 'Flowtion (Co-founder) - Funded by Austria Wirtschaftsservice (55k€)',
+    type: 'position',
+    start: 'Sept 2024',
+    end: 'Present',
+    location: 'Remote',
+    bullets: [
+        'Led technical architecture and development as the primary engineer on a two-person engineering team',
+        'Built server-side pose estimation pipeline using WebRTC (aiortc) to stream client video for inference with pose models (HRNet, ViTPose etc.)',
+    ],
+  },
+  {
     title: 'Pose Estimation Benchmarking Framework',
     type: 'tool',
     organization: 'Closed-source · Industry collaboration',
     location: 'Closed-source',
     start: '2023',
-    end: 'present',
+    end: 'Present',
     tags: ['Python', 'PyTorch', 'HDF5', 'YAML'],
     bullets: [
         'Unified plugin-oriented framework for training and evaluating SOTA 2D/3D pose estimation models, designed for reproducibility and fair cross-model comparison.',
@@ -164,10 +176,25 @@ export const skills: SkillGroup[] = [
   },
   {
     category: 'CV & ML',
-    items: ['PyTorch', 'TensorFlow', 'OpenCV', 'scikit-learn', 'ONNX'],
+    items: ['PyTorch', 'TensorFlow', 'OpenCV', 'scikit-learn'],
   },
   {
     category: 'Tools',
-    items: ['Git', 'Docker', 'Linux', 'SLURM (Compute Canada)'],
+    items: ['Git', 'Docker', 'Linux', 'SLURM & HPC (Compute Canada)'],
+  },
+]
+
+
+export type Service = {
+  description: string
+  organization: string
+  year: string
+}
+
+export const service: Service[] = [
+  {
+    description: 'Authored lab software development quality procedures (reproducibility standards, Git workflows, onboarding documentation) as part of ISO certification maintenance',
+    organization: 'LIO-ÉTS',
+    year: '2023-2025',
   },
 ]

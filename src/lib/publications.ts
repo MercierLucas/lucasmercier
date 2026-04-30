@@ -15,7 +15,7 @@ export const publications:Publication[] = [
     loc: 'Journal of Biomechanics',
     badges: [{ label: 'Accepted', type: 'accepted' }],
     links: [
-    { label: 'DOI', href: 'https://dx.doi.org/10.2139/ssrn.6017118' },
+    { label: 'DOI', href: 'https://www.sciencedirect.com/science/article/pii/S002192902600196X' },
     ],
     year:2026,
     image: '/images/publis/2026_job_markers.png'
@@ -26,7 +26,7 @@ export const abstracts:Publication[] = [
 {
     year:2026,
     title: 'Using knee kinesiography to train markerless pose estimation models for first-line kinematic assessment in knee osteoarthritis',
-    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin, A.', 'Cresson T.', 'Vazquez, C.'],
+    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin A.', 'Cresson T.', 'Vazquez, C.'],
     loc: 'OARSI World Congress on Osteoarthritis · April 2026',
     badges: [{ label: 'Poster', type: 'poster' }],
     links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.joca.2026.01.216' }],

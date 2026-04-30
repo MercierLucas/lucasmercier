@@ -4,7 +4,7 @@ import { chromium } from 'playwright'
 const browser = await chromium.launch()
 const page = await browser.newPage()
 await page.setViewportSize({ width: 794, height: 1123 }) // A4 at 96dpi
-await page.goto('http://localhost:5173/resume')
+await page.goto('http://localhost:5173/_resume')
 await page.evaluateHandle('document.fonts.ready')
 await page.waitForTimeout(500) // small buffer
 await page.waitForLoadState('networkidle') // waits for JS to hydrate
