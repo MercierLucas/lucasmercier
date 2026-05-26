@@ -168,7 +168,7 @@
                             <div>
                                 {#each pub.authors as auth}
                                     {#if auth.includes('Mercier')}
-                                        <span class="authorship"><u>{auth}</u>, </span>
+                                        <span class="authorship">{auth}, </span>
                                     {:else}
                                         <span>{auth} ,</span>
                                     {/if}
@@ -323,6 +323,11 @@
         /* font-family: "Latin Modern Roman 17"; */
     }
 
+    .authorship {
+        border-bottom: 1px solid gray;
+        /* text-decoration: underline; */
+    }
+
    @media print {
         @page {
             size: A4;
@@ -386,10 +391,6 @@
 
         .pub-header {
             break-after: avoid;
-        }
-
-        .authorship {
-            text-decoration: underline;
         }
         }
 
