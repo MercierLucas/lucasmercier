@@ -26,8 +26,8 @@ export const abstracts:Publication[] = [
 {
     year:2026,
     title: 'Using knee kinesiography to train markerless pose estimation models for first-line kinematic assessment in knee osteoarthritis',
-    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin A.', 'Cresson T.', 'Vazquez, C.'],
-    loc: 'OARSI World Congress on Osteoarthritis · April 2026',
+    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin A.', 'Cresson T.', 'Vazque, C.'],
+    loc: 'OARSI World Congress on Osteoarthritis · Palm Beach, USA 2026',
     badges: [{ label: 'Poster', type: 'poster' }],
     links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.joca.2026.01.216' }],
     image: '/images/publis/2026_oarsi.png'
@@ -35,7 +35,7 @@ export const abstracts:Publication[] = [
 {
     title: 'Framework for the application of markerless motion capture to biomechanics',
     authors: ['Mercier L.', 'Cresson T.', 'Mezghani N.', 'Vázquez C.'],
-    loc: 'Multidisciplinary Biomechanics Journal · 2025',
+    loc: 'Congress of the French society of biomechanics · Marseille, France 2025',
     badges: [{ label: 'Oral', type: 'oral' }],
     year:2025,
     links: [{ label: 'DOI', href: 'https://doi.org/10.46298/mbj.16163' }],
@@ -46,7 +46,7 @@ export const abstracts:Publication[] = [
     year:2025,
     title: 'Markerless motion capture accuracy in children with cerebral palsy and typically developing children',
     authors: ['Naaïm A.', 'Rozaire J.', 'Mercier L.', 'Begon M.', 'Cherni Y.'],
-    loc: 'Multidisciplinary Biomechanics Journal · 2025',
+    loc: 'Congress of the French society of biomechanics · Marseille, France 2025',
     links: [{ label: 'DOI', href: 'https://doi.org/10.46298/mbj.16215' }],
     badges: [{ label: 'Oral', type: 'oral' }],
     image: '/images/publis/2025_sb_naaim.png'
@@ -70,6 +70,7 @@ export const presentations:Publication[] = [
     title: 'Étude de l\'impact de la présence des marqueurs pour l\'estimation de la pose humaine',
     authors: ['Mercier L.', 'Cresson T.', 'Mezghani N.', 'Vázquez C.'],
     loc: '92e Congrès de l\'Acfas · Montréal, Canada · 2025',
+    links: [{label: 'ORAL', href: 'https://www.acfas.ca/archives/evenements/congres/activites/88454'}],
     badges: [{ label: 'Oral', type: 'oral' }],
     image: '/images/publis/2025_acfas.png'
 

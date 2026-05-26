@@ -15,25 +15,25 @@ export type Degree = {
 export const education: Degree[] = [
   {
     institution: 'École de technologie supérieure (ÉTS)',
-    degree: 'Ph.D. in computer science',
+    degree: 'Ph.D. in computer science, supervised by Carlos Vázquez, Neila Mezghani, Thierry Cresson',
     field: 'Medical Imaging',
-    start: 'oct 2021',
+    start: 'Oct 2021',
     end: 'Present',
     items: [
         'Developed acquisition software to synchronize RGB and MoCap systems; built inpainting pipeline using GANs to remove reflective markers from images; benchmarked and improved SOTA monocular 3D pose estimation models for clinical gait parameters.',
-        'Supervisors: Carlos Vázquez, Neila Mezghani, Thierry Cresson'
+        'Co-supervision of two 6 months internships (camera calibration tool & on edge pose estimation)'
     ],
     location: 'Montréal, Canada',
   },
   {
     institution: 'Institut supérieur d\'électronique de Paris (ISEP)',
-    degree: 'Engineering school (equiv. M.Sc.)',
+    degree: 'Engineering school (equiv. M.Sc.) - Specialization: Data analysis and artificial intelligence (years 2 & 3)',
     field: 'Computer science',
     start: '2016',
     end: '2021',
     items: [
-        'Specialization: Data analysis and artificial intelligence (years 2 & 3)',
-        'End of track research project: Myelin sheath segmentation using UNet for sclerosis estimation',
+        // 'Specialization: Data analysis and artificial intelligence (years 2 & 3)',
+        'End of track research project: Myelin sheath segmentation using UNet for g-ratio estimation in neurological pathology analysis',
     ],
     location: 'Paris, France',
   },
@@ -54,6 +54,7 @@ export type Teaching = {
   role: string
   semesters: string
   institution: string
+  link: string
   labs: string[]
 }
 
@@ -62,8 +63,9 @@ export const teaching: Teaching[] = [
     {
       course: 'GT411 - Digital Imaging',
       role: 'Teaching assistant',
-      semesters: 'Fall 2024, Winter 2025, Fall 2025',
+      semesters: 'Fall 2024, Winter 2025, Fall 2025 - 107 hours total',
       institution: 'ETS - Montreal',
+      link: 'https://www.etsmtl.ca/etudes/cours/gti411',
       labs: [
         'Mini Lightroom - contrast, curves, color space',
         'Road sign detection - classical CV, no deep learning',
@@ -106,7 +108,7 @@ export const awards: Awards[] = [
   location?: string
   supervisor?: string
   bullets: string[]
-  links?: { label: string; href: string }[]
+  links?: string
   tags?: string[]
 }
  
@@ -118,9 +120,10 @@ export const experience: Experience[] = [
     start: 'Jan 2026',
     end: 'Mar 2026',
     location: 'Paris, France',
+    links: 'https://biomecanique.ensam.eu/accueil-biomeca-100770.kjsp',
     bullets: [
         'Finetuned and benchmarked SOTA pose estimation model for gait parameter estimation on pathological populations',
-        'Improved these 2D-to-3D lifting models by integrating visual features from RGB frames using multi-scale deformable offset sampling',
+        'Improved these 2D-to-3D lifting models by integrating visual features from RGB frames using multi-scale deformable offset sampling (manuscript in preparation)',
     ],
   },
   {
@@ -130,6 +133,7 @@ export const experience: Experience[] = [
     start: 'Sept 2024',
     end: 'Present',
     location: 'Remote',
+    links: 'https://www.linkedin.com/company/flowtiontech',
     bullets: [
         'Led technical architecture and development as the primary engineer on a two-person engineering team',
         'Built server-side pose estimation pipeline using WebRTC (aiortc) to stream client video for inference with pose models (HRNet, ViTPose etc.)',
@@ -138,13 +142,14 @@ export const experience: Experience[] = [
   {
     title: 'Pose Estimation Benchmarking Framework',
     type: 'tool',
-    organization: 'Closed-source · Industry collaboration',
+    organization: 'Developed for industrial partner (closed-source)',
     location: 'Closed-source',
     start: '2023',
     end: 'Present',
     tags: ['Python', 'PyTorch', 'HDF5', 'YAML'],
+    links: 'https://moveck.com',
     bullets: [
-        'Unified plugin-oriented framework for training and evaluating SOTA 2D/3D pose estimation models, designed for reproducibility and fair cross-model comparison.',
+        'Unified plugin-oriented framework for training and evaluating SOTA 2D/3D pose estimation models. Reimplemented more than 15 models (HRNet, ViTPose, MotionBERT, MixSTE etc.). Designed for reproducibility and fair cross-model comparison.',
         'Used across multiple PhD projects and an industry collaboration for clinical markerless motion analysis.',
     ],
     },
@@ -154,6 +159,7 @@ export const experience: Experience[] = [
     type: 'industry',
     start: 'Feb 2021',
     end: 'Aug 2021',
+    links: 'https://storelift.co/',
     location: 'Ivry-sur-Seine, France',
     bullets: [
       'Implemented SOTA multi-object tracking algorithms (MOTNeuralSolver, FairMOT) for person tracking in autonomous retail environments.',

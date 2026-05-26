@@ -1,6 +1,7 @@
 <script>
     import { education, teaching, experience, awards, skills, service } from "$lib/resume";
     import { publications, abstracts, presentations } from '$lib/publications';
+    import { a } from "$lib/mdsvex.svelte";
 
     const publicationsHeaders = ['JOURNALS', 'CONFERENCES']
     const confs = abstracts.concat(presentations)
@@ -12,7 +13,7 @@
 <main>
     <header>
         <h1>Lucas Mercier</h1>
-        <p class="tagline">PhD Candidate in Computer Vision applied to 3D Human pose estimation · Seeking Postdoctoral Position for late 2026/2027</p>
+        <p class="tagline">PhD Candidate in Computer Vision applied to 3D Human pose estimation · Seeking Postdoctoral Position from late 2026</p>
         <p>Laboratoire d'Innovation ouverte en technologie de la santé · ÉTS Montréal</p>
         <div class="socials">
           <a class="social-link" href="https://github.com/MercierLucas" target="_blank" rel="noopener noreferrer">
@@ -35,6 +36,13 @@
         <div>Portfolio <a href="https://www.lucasmercier.me/" class="portfolio">https://www.lucasmercier.me/</a></div>
     
     </header>
+
+    <div class="section">
+        <div class="section-title">RESEARCH INTEREST</div>
+        <div class="section-content">
+            Computer vision, 3D Human pose estimation, Gait analysis, Machine learning, Image and video processing, Motion analysis, AI for healthcare
+        </div>
+    </div>
 
 
     <!-- EDUCATION -->
@@ -68,17 +76,17 @@
     
 
     <div class="section">
-        <div class="section-title">RESEARCH PROJECTS</div>
+        <div class="section-title">EXPERIENCE</div>
         <div class="section-content">
-            <div class="section-item">
+            <!-- <div class="section-item">
                 <div><b>Main topics:</b> Computer vision, 3D Human pose estimation, Gait analysis, Machine learning, Image and video processing, Motion analysis, AI for healthcare</div>
-            </div>
+            </div> -->
             
-            <p class="pub-header">Related projects</p>
+            <!-- <p class="pub-header">Related projects</p> -->
             {#each experience as exp}
                 <div class="section-item">
-                    <div>
-                        <div><span class="bold">{exp.title}</span> - {exp.organization}</div>
+                    <div class="experience-item">
+                        <div><span class="bold">{exp.title}</span> - <a href={exp.links} class='link'>{exp.organization}</a></div>
                         <ul>
                             <!-- <li>{degree.degree}</li> -->
                             {#each exp.bullets as item}
@@ -93,38 +101,6 @@
         </div>
     </div>
 
-    <!-- PUBLICATIONS -->
-    <div class="section">
-        <div class="section-title">PUBLICATIONS</div>
-        <div class="section-content">
-            {#each publicationsHeaders as header, i}
-                <div>
-                    <p class="pub-header">{header}</p>
-                    {#each pubs[i] as pub}
-                        <div class="pub-item">
-                            <div>{pub.year}</div>
-                            <div>
-                                {#each pub.authors as auth}
-                                    {#if auth.includes('Mercier')}
-                                        <span class="authorship"><u>{auth}</u>, </span>
-                                    {:else}
-                                        <span>{auth} ,</span>
-                                    {/if}
-                                {/each}
-                                <!-- <span><i>{pub.title}</i></span> -->
-                                <span>{pub.title}, </span>
-                                <span>{pub.loc}</span>
-                                {#each pub.links as link}
-                                    <a href={link.href}>[DOI]</a> 
-                                {/each}
-                            </div>
-                        </div>
-                    {/each}
-                </div>
-            {/each}
-
-        </div>
-    </div>
 
     <!-- TEACHING -->
     <div class="section">
@@ -134,7 +110,7 @@
                 <div>
                     <div><span class="bold">{course.role}</span> - {course.institution}</div>
                     <ul>
-                        <li>{course.course} ({course.semesters})</li>
+                        <li><a href={course.link} class="link">{course.course}</a>   ({course.semesters})</li>
                     </ul>
                 </div>
             {/each}
@@ -148,7 +124,7 @@
             {#each awards as award}
                 <div class="award-item">
                     <div><span class="bold">{award.title}</span> - {award.sub}</div>
-                    <div>{award.year}</div>
+                    <div class="section-date">{award.year}</div>
                 </div>
             {/each}
         </div>
@@ -173,9 +149,42 @@
             {#each service as s}
             <div class="award-item">
                 <div>{s.description} · <span class="bold">{s.organization}</span></div>
-                <div>{s.year}</div>
+                <div class="section-date">{s.year}</div>
             </div>
             {/each}
+        </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section no-bt">
+        <div class="section-title">PUBLICATIONS</div>
+        <div class="section-content">
+            {#each publicationsHeaders as header, i}
+                <div>
+                    <p class="pub-header">{header}</p>
+                    {#each pubs[i] as pub}
+                        <div class="pub-item">
+                            <div>{pub.year}</div>
+                            <div>
+                                {#each pub.authors as auth}
+                                    {#if auth.includes('Mercier')}
+                                        <span class="authorship"><u>{auth}</u>, </span>
+                                    {:else}
+                                        <span>{auth} ,</span>
+                                    {/if}
+                                {/each}
+                                <!-- <span><i>{pub.title}</i></span> -->
+                                <span>{pub.title}, </span>
+                                <span>{pub.loc}</span>
+                                {#each pub.links as link}
+                                    <a href={link.href}>[{link.label}]</a> 
+                                {/each}
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+            {/each}
+
         </div>
     </div>
 
@@ -190,10 +199,16 @@
         flex-direction: column; /* Stacks elements vertically */
         align-items: center;    /* Centers elements horizontally */
         text-align: center;     /* Ensures text inside elements is centered */
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
     header p{
         margin: 0;
+    }
+
+    .link
+    {
+        color: #2D6A4F;
+        font-weight: bold;
     }
 
     .tagline {
@@ -218,12 +233,16 @@
 
     .section-date
     {
-        /* font-size: small; */
+        font-size: small;
     }
 
     .social-link, .portfolio{
-        color: blue;
+        /* color: blue; */
         text-decoration: underline;
+    }
+
+    a{
+        color: #2D6A4F;
     }
 
 
@@ -250,9 +269,18 @@
     {
         display: grid;
         grid-template-columns: 2fr 10fr;
-        margin-bottom: 2rem;
-
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        break-inside: avoid;
+        /* margin-bottom: 2rem; */
+        border-bottom: 1px solid grey;
     }
+
+    .no-bt
+    {
+        border: none !important;
+    }
+    
 /* 
     .section-content
     {
@@ -331,6 +359,11 @@
             margin: 0.2rem 0;
         } */
 
+        .experience-item
+        {
+            break-inside: avoid;
+        }
+
         .section {
             margin-bottom: 0.6rem;
             break-inside: auto;
@@ -339,6 +372,10 @@
         .section-title {
             /* break-after: avoid; */
             font-size: medium;
+        }
+
+        .section-date{
+            font-size: x-small;
         }
 
         /* .section-item,
