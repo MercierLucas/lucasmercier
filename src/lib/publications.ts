@@ -13,7 +13,7 @@ export const publications:Publication[] = [
     title: 'Effect of markers in training dataset for markerless applications in biomechanics',
     authors: ['Mercier L.', 'Cresson T.', 'Gervais S.', 'Mezghani N.', 'Vázquez C.'],
     loc: 'Journal of Biomechanics',
-    badges: [{ label: 'Accepted', type: 'accepted' }],
+    badges: [{ label: 'Journal', type: 'journal' }],
     links: [
     { label: 'DOI', href: 'https://www.sciencedirect.com/science/article/pii/S002192902600196X' },
     ],
@@ -25,8 +25,18 @@ export const publications:Publication[] = [
 export const abstracts:Publication[] = [
 {
     year:2026,
+    title: 'Investigating reflective marker impact in a multi-camera markerless motion capture scenario. ',
+    authors: ['Mercier L.', 'Gajny L.',  'Cresson T.', 'Mezghani, N.', 'Vázquez, C.'],
+    loc: 'Congress of the French society of biomechanics · Montpellier, France 2026',
+    badges: [{ label: 'Oral', type: 'oral' }],
+    links: [{ label: 'DOI', href: 'https://hal.science/hal-05738111/document' }],
+    image: '/images/publis/2026_sb_mercier.png'
+},
+
+{
+    year:2026,
     title: 'Using knee kinesiography to train markerless pose estimation models for first-line kinematic assessment in knee osteoarthritis',
-    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin A.', 'Cresson T.', 'Vazque, C.'],
+    authors: ['Mercier L.', 'Marois B.', 'Fuentes A.', 'Cagnin A.', 'Cresson T.', 'Vázquez, C.'],
     loc: 'OARSI World Congress on Osteoarthritis · Palm Beach, USA 2026',
     badges: [{ label: 'Poster', type: 'poster' }],
     links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.joca.2026.01.216' }],

@@ -149,6 +149,7 @@ img {
 
   .badge-preprint { background: var(--color-background-warning, #fef3c7); color: var(--color-text-warning, #92400e); }
   .badge-accepted { background: var(--color-background-success, #d1fae5); color: var(--color-text-success, #065f46); }
+  .badge-journal { background: var(--color-background-success, #d1fae5); color: var(--color-text-success, #065f46); }
   .badge-poster   { background: var(--color-background-secondary, #f5f5f5); color: var(--color-text-secondary, #666); }
   .badge-oral     { background: var(--color-background-info, #dbeafe); color: var(--color-text-info, #1e40af); }
 
