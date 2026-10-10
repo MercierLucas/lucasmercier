@@ -83,9 +83,10 @@
     }
 
     #page {
+        /* background: red; */
         --accent: #2D6A4F;
         font-family: 'DM Sans', sans-serif;
-        max-width: 900px;
+        /* max-width: 900px; */
         margin: 0 auto;
         padding: 0rem 1.5rem 1rem;
     }

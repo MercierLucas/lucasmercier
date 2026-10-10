@@ -6,6 +6,7 @@ export type Publication = {
     badges?: {label: string, type:string}[];
     links?: {label:string, href:string}[];
     image?: string;
+    description?: string;
 };
   
 export const publications:Publication[] = [
@@ -17,6 +18,9 @@ export const publications:Publication[] = [
     links: [
     { label: 'DOI', href: 'https://www.sciencedirect.com/science/article/pii/S002192902600196X' },
     ],
+    description: "We formally demonstrate that when pose estimation model are trained with visible markers, the model learns to detect the markers rather than the actual human anatomy. We developed an inpainting pipeline using a GAN-based model (LaMa) to remove markers from test images. By using Class Activation Maps (CAM), we showed that the network's attention focuses heavily on markers when they are visible.",
+    
+    // In markerless motion analysis applications, human pose estimation models are often trained on marker-based MoCap annotations. In these cases, reflective markers (and rigid bodies) remain visible in the training images. Using computer-vision techniques, we demonstrate that when these markers are visible, the model learns to detect the markers rather than the actual human anatomy. We developed an inpainting pipeline using a GAN-based model (LaMa) to remove markers from test images. By using Class Activation Maps (CAM), we showed that the network's attention focuses heavily on markers when they are visible.",
     year:2026,
     image: '/images/publis/2026_job_markers.png'
 },
@@ -30,7 +34,8 @@ export const abstracts:Publication[] = [
     loc: 'Congress of the French society of biomechanics · Montpellier, France 2026',
     badges: [{ label: 'Oral', type: 'oral' }],
     links: [{ label: 'DOI', href: 'https://hal.science/hal-05738111/document' }],
-    image: '/images/publis/2026_sb_mercier.png'
+    image: '/images/publis/2026_sb_mercier.png',
+    description: "We extend our previous work on marker impact in training pose estimation model to multi-camera markerless motion capture scenario. In that case MPJPE (mm) increases by up to +40% when markers are removed."
 },
 
 {
@@ -40,7 +45,8 @@ export const abstracts:Publication[] = [
     loc: 'OARSI World Congress on Osteoarthritis · Palm Beach, USA 2026',
     badges: [{ label: 'Poster', type: 'poster' }],
     links: [{ label: 'DOI', href: 'https://doi.org/10.1016/j.joca.2026.01.216' }],
-    image: '/images/publis/2026_oarsi.png'
+    image: '/images/publis/2026_oarsi.png',
+    description: "Off-the-shelf pose estimation models reported limited precision to estimate sagittal knee kinematics. results further suggest that the available models are insufficient to estimate knee OA relevant markers, failing to meet required clinical accuracy. Retraining them on a clinicaly validated system, the KneeKG, significantly improved models' accuracy to achieve within-to-close clinically acceptable threshold. "
 },
 {
     title: 'Framework for the application of markerless motion capture to biomechanics',

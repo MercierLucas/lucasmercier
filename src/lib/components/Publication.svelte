@@ -6,7 +6,14 @@
 
 <div class="ref-item" class:has-image={pub.image}>
     {#if pub.image}
-        <div><img src={pub.image} alt=""></div>
+        <div>
+          <img src={pub.image} alt="">
+          <!-- {#if pub.badges}
+            <div class="overlay-badge">
+              <div class="overlay-badge-item">{pub?.badges[0].type}</div>  
+            </div>
+          {/if} -->
+        </div>
     {/if}
     <!-- <div>
         <p>Test</p>
@@ -22,8 +29,8 @@
                 {/if}
             {/each}
         </p>
+        <div><span class="ref-loc">{pub.loc}</span></div>
         <div class="ref-meta">
-            <span class="ref-loc">{pub.loc}</span>
             {#if pub.badges}
                 {#each pub.badges as badge}
                     <span class="badge badge-{badge.type}">{badge.label}</span>
@@ -32,14 +39,16 @@
             {#each pub.links as link}
                 {#if link.label.includes('DOI')}
                     <a class="social-link" href={link.href} target="_blank" rel="noopener noreferrer">
-                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>DOI</title><path d="M24 12c0 6.633-5.367 12-12 12S0 18.633 0 12 5.367 0 12 0s12 5.367 12 12ZM7.588 6.097v4.471c-.663-.925-1.403-1.373-2.406-1.373-2.046 0-3.244 1.441-3.244 3.847 0 2.357 1.325 3.848 3.166 3.848 1.12 0 1.88-.4 2.445-1.325l-.039 1.042h2.045V6.097Zm-1.763 8.942c-1.12 0-1.802-.76-1.802-2.045 0-1.325.682-2.085 1.802-2.085 1.081 0 1.802.76 1.802 2.085 0 1.285-.672 2.045-1.802 2.045Zm12.253-1.948c0-2.172-1.578-3.789-3.906-3.789-2.328 0-3.945 1.695-3.945 3.789 0 2.133 1.578 3.789 3.945 3.789 2.289 0 3.906-1.656 3.906-3.789Zm-2.094-.01c0 1.14-.711 1.89-1.851 1.89-1.139 0-1.851-.75-1.851-1.89 0-1.139.712-1.89 1.851-1.89 1.149 0 1.861.751 1.851 1.89Zm2.6-5.795c0 .633.517 1.227 1.189 1.227.633 0 1.188-.555 1.188-1.227a1.17 1.17 0 0 0-1.188-1.189c-.672 0-1.179.556-1.189 1.189Zm.166 9.341h2.055V9.604H18.75Z"/></svg>
-                        DOI
+                        PAPER
                     </a>
                 {:else}
                     <a class="ref-link" href={link.href} target="_blank" rel="noopener noreferrer">{link.label} →</a>
                 {/if}
             {/each}
         </div>
+        {#if pub.description}
+          <div class="description">{pub.description}</div>
+        {/if}
     </div>
 </div>
 
@@ -81,7 +90,10 @@
   gap: 1rem;
   padding: 9px 0;
   border-bottom: 0.5px solid var(--color-border, #e5e5e5);
-  align-items: start;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+
 }
 
 
@@ -90,9 +102,22 @@
 }
 
 
+.overlay-badge-item
+{
+  background: red;
+  width: 100%;
+  /* position: absolute; */
+}
+
+.description{
+  margin-top: 1rem;
+  font-size: .9rem;
+}
+
+
 
 img {
-  max-width: 150px;
+  max-width: 300px;
   width: 100%;
   height: auto;
   display: block;
@@ -103,7 +128,7 @@ img {
 
   .ref-title {
     margin-top: 0;
-    font-size: 13px;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 1.5;
     margin-bottom: 3px;
@@ -115,7 +140,7 @@ img {
     }
 
   .ref-authors {
-    font-size: 12px;
+    font-size: 1rem;
     color: var(--color-muted, #666);
     margin-bottom: 4px;
     line-height: 1.4;
@@ -129,7 +154,7 @@ img {
   }
 
   .ref-loc {
-    font-size: 11px;
+    font-size: .8rem;
     color: var(--color-muted, #999);
   }
 
