@@ -94,8 +94,21 @@
 
     </div>
 
+    <section id="news">
+        <h2 class="section-label">🔥 News</h2>
+        <div class="news-list">
+          {#each news as item}
+            <div class="news-item">
+              <span class="news-date">{item.date}</span>
+              <span class="news-text">{@html item.text}</span>
+            </div>
+          {/each}
+        </div>
+    </section>
+
+
     <section id="publications">
-        <h2 class="section-label">Publications</h2>
+        <h2 class="section-label">📓 Publications</h2>
         {#each publications as pub}
           <Publication pub={pub}/>
         {/each}
@@ -122,20 +135,10 @@
         {/each}
       </section>
 
-    <section id="news">
-        <h2 class="section-label">News</h2>
-        <div class="news-list">
-          {#each news as item}
-            <div class="news-item">
-              <span class="news-date">{item.date}</span>
-              <span class="news-text">{@html item.text}</span>
-            </div>
-          {/each}
-        </div>
-    </section>
+
 
     <section id="teaching">
-      <h2 class="section-label">Teaching</h2>
+      <h2 class="section-label">🏫 Teaching</h2>
       {#each teaching as t}
         <div class="teaching-item">
           <div class="teaching-header">
